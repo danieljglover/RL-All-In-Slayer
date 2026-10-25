@@ -1,0 +1,8 @@
+{
+  "itemKey": "teleport-crystal",
+  "name": "Teleport crystal",
+  "aliases": ["teleport crystals", "eternal teleport crystal", "teleport crystal (1)", "teleport crystal (2)", "teleport crystal (3)", "teleport crystal (4)", "teleport crystal (5)"],
+  "itemIds": [6102, 6101, 6100, 6099, 13102, 23946],
+  "stackable": false,
+  "dosed": false
+}

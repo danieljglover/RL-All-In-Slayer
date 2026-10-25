@@ -23,8 +23,20 @@
   "kalphite": false,
   "undead": false,
   "boss": false,
-  "location": "Ynysdail Cavern (superior; 'Bigger and Badder' unlock; 1/200 on task; cannon-immune)",
-  "requirement": "Slayer 78; Sailing 73 + adamant keel; 'Bigger and Badder' unlock",
+  "location": "Ynysdail Cavern (superior; 'Bigger and Badder' unlock; 1/200 on task, 1/150 with elite Combat Achievements; cannon-immune)",
+  "locationId": "aquanite-cavern-sailing",
+  "requirement": "Slayer 78",
   "bossId": null,
-  "strategyId": "aquanite"
+  "strategyId": "aquanite",
+  "offence": {
+    "hitpoints": 400,
+    "maxHit": 34,
+    "attackStyles": [
+      "MAGIC"
+    ],
+    "attackSpeedTicks": 5,
+    "magicLevel": 330,
+    "poisonous": false
+  },
+  "advisorRepeatable": false
 }

@@ -38,6 +38,10 @@
     "duradel": [
       150,
       200
+    ],
+    "mortimer": [
+      150,
+      200
     ]
   },
   "unlocks": [
@@ -53,14 +57,14 @@
       "name": "Lured In",
       "pointsCost": 80,
       "type": "TASK_UNLOCK",
-      "notes": "Nieve and Duradel will be able to assign Aquanites as a Slayer task."
+      "notes": "Nieve and Duradel will be able to assign Aquanites as a Slayer task. Mortimer assigns them without this unlock."
     },
     {
       "unlockId": "lets-stay-all-aquanite",
       "name": "Let's Stay All Aquanite",
       "pointsCost": 100,
       "type": "EXTENSION",
-      "notes": "Number of aquanites assigned is increased to 150-200."
+      "notes": "Number of aquanites assigned is increased to 150-200, including Mortimer's assignments."
     }
   ],
   "monsterIds": [
@@ -77,11 +81,11 @@
   },
   "monsterDefence": {
     "defenceLevel": 70,
-    "stab": 40,
-    "slash": 40,
-    "crush": 20,
-    "magic": 40,
-    "range": 40
+    "stab": 60,
+    "slash": 80,
+    "crush": 80,
+    "magic": 140,
+    "range": 100
   },
   "slayerHelmApplies": true,
   "undead": false,
@@ -103,10 +107,10 @@
         "Ynysdail Cavern"
       ],
       "notes": [
-        "Requires 78 Slayer and access to Ynysdail.",
-        "Attacks with accurate Magic and has a max hit of 18.",
+        "Requires 78 Slayer and 73 Sailing to reach Ynysdail.",
+        "Has 180 Hitpoints and attacks with accurate Magic every 5 ticks, with a max hit of 18.",
         "Slash severs the lure and reduces stab Defence from 60 to 10.",
-        "Can drop the Aquanite tendon used to make the Aquanite hopper.",
+        "Drops the Aquanite tendon (1/3500, or 1/750 on task), used to make the Aquanite hopper.",
         "Cannon cannot be used because the cavern floor is too damp."
       ]
     },
@@ -120,9 +124,10 @@
       ],
       "notes": [
         "Superior Slayer monster unlocked by Bigger and Badder.",
-        "Spawns at a 1/200 rate after killing an Aquanite while on task.",
-        "Special attack deals 35 damage if Protect from Magic has been active for some time.",
-        "Flick Protect from Magic on and off between attacks to avoid taking damage."
+        "Spawns at a 1/200 rate after killing an Aquanite while on task (1/150 with the elite Combat Achievements).",
+        "Has 400 Hitpoints and a max hit of 34; its special attack disables protection prayers and hits up to 50 if Protect from Magic has been active for some time.",
+        "Flick Protect from Magic on and off between attacks to avoid taking damage.",
+        "Slash also severs its lure, reducing stab Defence from 60 to 10."
       ]
     }
   ],
@@ -130,33 +135,37 @@
     {
       "locationId": "aquanite-cavern-sailing",
       "name": "Ynysdail Cavern",
-      "amount": 0,
+      "amount": 16,
       "multicombat": false,
       "cannonable": false,
-      "safespottable": false,
+      "safespottable": true,
       "notes": [
-        "Aquanites are found in Ynysdail Cavern beneath Ynysdail.",
+        "Aquanites are found only in Ynysdail Cavern beneath Ynysdail (16 spawns).",
         "The area is single-way combat.",
-        "A Dwarf multicannon cannot be used because the ground is too damp."
+        "A Dwarf multicannon cannot be used because the ground is too damp.",
+        "Aquanites can be safespotted with a 9 or 10 tile attack range."
       ]
     }
   ],
   "taskNotes": [
     "Aquanites require 78 Slayer to kill and no combat level requirement.",
-    "Accessing Ynysdail requires 73 Sailing and a boat with an adamant keel or better.",
-    "To receive Aquanites as a Slayer task, players must first unlock Lured In for 80 Slayer reward points.",
-    "Nieve assigns 40-60 Aquanites and Duradel assigns 30-50 Aquanites.",
-    "Let's Stay All Aquanite extends Aquanite assignments to 150-200.",
-    "Aquanites can drop the Aquanite tendon used to make the Aquanite hopper.",
+    "Mooring at Ynysdail requires 73 Sailing; the first trip must be sailed with an adamant keel or better, entering through the green portal east of Lledrith Island.",
+    "Nieve and Duradel assign Aquanites only after the Lured In unlock (80 Slayer reward points); Mortimer can assign them without it.",
+    "Nieve assigns 40-60, Duradel 30-50 and Mortimer 40-60 Aquanites.",
+    "Let's Stay All Aquanite (100 points) extends Aquanite assignments to 150-200.",
+    "Mortimer's quantity modifier adds 50-100 Aquanites (90-160, or 200-300 when extended).",
+    "Aquanites drop the Aquanite tendon (1/3500, or 1/750 on task), used to make the Aquanite hopper.",
     "Aquanites attack with Magic and have high accuracy, so Protect from Magic is highly recommended.",
+    "Aquanites can be safespotted with a 9 or 10 tile attack range.",
     "Aquanites are in single-way combat, and a Dwarf multicannon cannot be used because the ground is too damp.",
-    "slash attack severs the Aquanite lure, reducing stab Defence by 50 from 60 to 10; damage is not required to sever the lure.",
-    "Use a fast 4-tick slash weapon such as a scimitar or Abyssal whip to sever the lure before using stab weapons.",
+    "A slash attack severs the Aquanite lure, reducing stab Defence by 50 from 60 to 10; damage is not required, but the attack option must be set to slash.",
+    "Use a fast 4-tick slash weapon such as a scimitar or Abyssal whip to sever the lure before using stab weapons, or swap a two-style weapon such as the Ghrazi rapier between slash and stab.",
     "Saradomin godsword special attack can sever the lure if no other special attack weapon is brought.",
-    "Elder Aquanites can spawn at 1/200 on task after Bigger and Badder and require flicking Protect from Magic to avoid their 35-damage special.",
+    "Elder aquanites can spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); flick Protect from Magic to avoid their prayer-disabling special, which hits up to 50.",
     "For first-time access, sail manually to Ynysdail and build the rowboat hotspot.",
-    "Building the rowboat requires 70 Construction, hammer, saw, 10 swamp paste, and 8 camphor planks.",
-    "After the rowboat is built, travel is possible between Ynysdail and north of Gwenith; using that rowboat requires Song of the Elves."
+    "Building the rowboat requires 50 Construction, hammer, saw, 10 swamp paste, and 8 camphor planks (the Rowboat amenity recipe; the Slayer task page states 70).",
+    "After the rowboat is built, travel is possible between Ynysdail and north of Gwenith (teleport to Prifddinas and exit north); using that rowboat requires Song of the Elves.",
+    "Without the rowboat or a greater teleport focus on the ship, returning may require resetting the ship to a mooring point."
   ],
-  "recommendedMethod": "Use Protect from Magic. Sever the Aquanite lure with a fast slash weapon such as Abyssal whip or a scimitar, then use strong stab melee such as Soulreaper axe, Ghrazi rapier, Osmumten's fang, Blade of saeldor, Abyssal dagger, or Voidwaker. Flick Protect from Magic against Elder aquanites."
+  "recommendedMethod": "Use Protect from Magic. For melee, sever the Aquanite lure with a slash attack from Abyssal whip, a scimitar or a weapon set to slash, then use strong stab or high-DPS melee such as Soulreaper axe, Scythe of Vitur, Ghrazi rapier, Osmumten's fang, Blade of Saeldor or Voidwaker. For ranged, use Toxic blowpipe or Twisted bow, Bow of Faerdhinen or Zaryte crossbow; a 9-10 tile safespot is available. Flick Protect from Magic against Elder aquanites."
 }

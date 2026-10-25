@@ -527,8 +527,8 @@
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
           "pageId": 630114,
-          "revisionId": 15333591,
-          "timestamp": "2026-09-08T01:38:06Z",
+          "revisionId": 15354865,
+          "timestamp": "2026-09-24T01:12:46Z",
           "missing": false
         }
       ],
@@ -7366,16 +7366,16 @@
           "url": "https://oldschool.runescape.wiki/w/Aquanite",
           "title": "Aquanite",
           "pageId": 97955,
-          "revisionId": 15290196,
-          "timestamp": "2026-08-08T01:27:25Z",
+          "revisionId": 15376641,
+          "timestamp": "2026-10-20T08:48:39Z",
           "missing": false
         },
         {
           "url": "https://oldschool.runescape.wiki/w/Aquanite/Strategies",
           "title": "Aquanite/Strategies",
           "pageId": 631042,
-          "revisionId": 15317546,
-          "timestamp": "2026-08-23T20:36:58Z",
+          "revisionId": 15354922,
+          "timestamp": "2026-09-24T01:27:59Z",
           "missing": false
         }
       ],
@@ -7392,6 +7392,7 @@
           "Seeds and frags",
           "Other",
           "Tertiary",
+          "Collection log",
           "Trivia",
           "References"
         ],
@@ -7420,8 +7421,8 @@
           "url": "https://oldschool.runescape.wiki/w/Elder_aquanite",
           "title": "Elder aquanite",
           "pageId": 608471,
-          "revisionId": 15304634,
-          "timestamp": "2026-08-17T22:57:08Z",
+          "revisionId": 15376640,
+          "timestamp": "2026-10-20T08:48:23Z",
           "missing": false
         },
         {
@@ -7442,11 +7443,13 @@
         "Elder aquanite": [
           "Drops",
           "100%",
-          "Sailing resources",
-          "Seeds",
+          "Unique",
+          "Runes and ammunition",
+          "Seeds and frags",
           "Other",
           "Tertiary",
-          "Superior Slayer tertiary"
+          "Superior Slayer tertiary",
+          "Collection log"
         ]
       },
       "sourceNpcIdsAbsentFromPage": [],
@@ -27286,25 +27289,27 @@
     "locations/aquanite-cavern-sailing.json": {
       "id": "aquanite-cavern-sailing",
       "requestedTitles": [
-        "Aquanite cavern (Sailing)"
+        "Ynysdail Cavern"
       ],
       "originalPageId": 0,
       "evidence": [
         {
-          "url": "https://oldschool.runescape.wiki/w/Aquanite_cavern_(Sailing)",
-          "title": "Aquanite cavern (Sailing)",
-          "pageId": 0,
-          "revisionId": 0,
-          "timestamp": "",
-          "missing": true
+          "url": "https://oldschool.runescape.wiki/w/Ynysdail_Cavern",
+          "title": "Ynysdail Cavern",
+          "pageId": 612717,
+          "revisionId": 15212230,
+          "timestamp": "2026-05-17T04:35:19Z",
+          "missing": false
         }
       ],
       "status": "evidence-fetched-not-reviewed",
-      "missingTitles": [
-        "Aquanite cavern (Sailing)"
-      ],
+      "missingTitles": [],
       "equipmentTableCount": 0,
-      "headings": {}
+      "headings": {
+        "Ynysdail Cavern": [
+          "Mining"
+        ]
+      }
     },
     "locations/araxxor-lair.json": {
       "id": "araxxor-lair",
@@ -36073,8 +36078,8 @@
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
           "pageId": 630114,
-          "revisionId": 15333591,
-          "timestamp": "2026-09-08T01:38:06Z",
+          "revisionId": 15354865,
+          "timestamp": "2026-09-24T01:12:46Z",
           "missing": false
         }
       ],
@@ -44596,6 +44601,37 @@
         ]
       }
     },
+    "items/bonecrusher.json": {
+      "id": "bonecrusher",
+      "requestedTitles": [
+        "Bonecrusher"
+      ],
+      "originalPageId": 0,
+      "evidence": [
+        {
+          "url": "https://oldschool.runescape.wiki/w/Bonecrusher",
+          "title": "Bonecrusher",
+          "pageId": 45864,
+          "revisionId": 15362039,
+          "timestamp": "2026-10-03T12:41:42Z",
+          "missing": false
+        }
+      ],
+      "status": "evidence-fetched-not-reviewed",
+      "missingTitles": [],
+      "equipmentTableCount": 0,
+      "headings": {
+        "Bonecrusher": [
+          "Charging",
+          "Products",
+          "Transcript",
+          "Changes",
+          "Gallery (historical)",
+          "Trivia",
+          "References"
+        ]
+      }
+    },
     "items/burning-amulet.json": {
       "id": "burning-amulet",
       "requestedTitles": [
@@ -44834,6 +44870,36 @@
           "Shop locations",
           "Changes",
           "Gallery (historical)"
+        ]
+      }
+    },
+    "items/reagent-pouch.json": {
+      "id": "reagent-pouch",
+      "requestedTitles": [
+        "Reagent pouch"
+      ],
+      "originalPageId": 0,
+      "evidence": [
+        {
+          "url": "https://oldschool.runescape.wiki/w/Reagent_pouch",
+          "title": "Reagent pouch",
+          "pageId": 535790,
+          "revisionId": 15375823,
+          "timestamp": "2026-10-19T09:17:39Z",
+          "missing": false
+        }
+      ],
+      "status": "evidence-fetched-not-reviewed",
+      "missingTitles": [],
+      "equipmentTableCount": 0,
+      "headings": {
+        "Reagent pouch": [
+          "Methods",
+          "Storable items",
+          "Notable non-storeable items",
+          "Gallery",
+          "Changes",
+          "Trivia"
         ]
       }
     },
@@ -45107,6 +45173,36 @@
           "Super restore(3)",
           "Super restore(4)",
           "Shop locations",
+          "Changes"
+        ]
+      }
+    },
+    "items/teleport-crystal.json": {
+      "id": "teleport-crystal",
+      "requestedTitles": [
+        "Teleport crystal"
+      ],
+      "originalPageId": 0,
+      "evidence": [
+        {
+          "url": "https://oldschool.runescape.wiki/w/Teleport_crystal",
+          "title": "Teleport crystal",
+          "pageId": 26720,
+          "revisionId": 15261004,
+          "timestamp": "2026-07-11T12:18:11Z",
+          "missing": false
+        }
+      ],
+      "status": "evidence-fetched-not-reviewed",
+      "missingTitles": [],
+      "equipmentTableCount": 0,
+      "headings": {
+        "Teleport crystal": [
+          "Creation",
+          "Teleportation options",
+          "Item sources",
+          "Crystal teleport seed",
+          "Teleport crystal (1)",
           "Changes"
         ]
       }

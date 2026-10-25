@@ -2,7 +2,7 @@
   "itemKey": "holy-wrench",
   "name": "Holy wrench",
   "aliases": ["holy wrenches"],
-  "itemIds": [2422],
+  "itemIds": [6714],
   "stackable": false,
   "dosed": false
 }

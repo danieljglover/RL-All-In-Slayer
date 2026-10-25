@@ -12,19 +12,30 @@
   },
   "monsterDefence": {
     "defenceLevel": 70,
-    "stab": 40,
+    "stab": 60,
     "slash": 80,
     "crush": 80,
     "magic": 140,
-    "range": 40
+    "range": 100
   },
   "demon": false,
   "dragon": false,
   "kalphite": false,
   "undead": false,
   "boss": false,
-  "location": "Ynysdail Cavern (best type STAB; sever lure to drop stab 60->10; cannon-immune)",
-  "requirement": "Slayer 78; Sailing 73 + adamant keel; 'Lured In' unlock to be assigned",
+  "location": "Ynysdail Cavern (best type STAB after a slash severs the lure, dropping stab Defence 60->10; cannon-immune)",
+  "locationId": "aquanite-cavern-sailing",
+  "requirement": "Slayer 78",
   "bossId": null,
-  "strategyId": "aquanite"
+  "strategyId": "aquanite",
+  "offence": {
+    "hitpoints": 180,
+    "maxHit": 18,
+    "attackStyles": [
+      "MAGIC"
+    ],
+    "attackSpeedTicks": 5,
+    "magicLevel": 170,
+    "poisonous": false
+  }
 }

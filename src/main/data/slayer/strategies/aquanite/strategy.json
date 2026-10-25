@@ -27,15 +27,35 @@
       {
         "weaponId": "saradomin-godsword",
         "style": "MELEE"
+      },
+      {
+        "weaponId": "toxic-blowpipe",
+        "style": "RANGED"
+      },
+      {
+        "weaponId": "twisted-bow",
+        "style": "RANGED"
+      },
+      {
+        "weaponId": "bow-of-faerdhinen",
+        "style": "RANGED"
+      },
+      {
+        "weaponId": "zaryte-crossbow",
+        "style": "RANGED"
+      },
+      {
+        "weaponId": "crystal-bow",
+        "style": "RANGED"
       }
     ],
-    "note": "Protect from Magic is highly recommended. Slash severs the Aquanite lure and reduces stab Defence from 60 to 10, so carry a fast slash weapon such as Abyssal whip or use Saradomin godsword special attack, then use the best stab melee setup. Elder aquanites require Protect from Magic flicking to avoid their 35-damage special."
+    "note": "Protect from Magic is highly recommended. Slash severs the Aquanite lure and reduces stab Defence from 60 to 10, so open with a slash attack (Abyssal whip, a scimitar, Saradomin godsword special or a weapon set to slash), then use the best stab melee setup. Ranged is a wiki-listed alternative and can be safespotted with a 9 or 10 tile attack range. Elder aquanites require Protect from Magic flicking to avoid their special, which hits up to 50."
   },
   "requirements": [
     "78 Slayer is required to kill Aquanites.",
-    "73 Sailing and a boat with an adamant keel or better are required to reach Ynysdail.",
-    "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites.",
-    "70 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel.",
+    "73 Sailing is required to moor at Ynysdail; the first trip needs a boat with an adamant keel or better.",
+    "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites; Mortimer assigns them without it.",
+    "50 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel (the Slayer task page states 70; the Rowboat amenity recipe states 50).",
     "Using the rowboat between Ynysdail and north of Gwenith requires Song of the Elves."
   ],
   "mechanics": [
@@ -43,58 +63,57 @@
     "Protect from Magic is highly recommended against normal Aquanites.",
     "The cavern is single-way combat.",
     "A Dwarf multicannon cannot be placed because the ground is too damp.",
+    "Aquanites can be safespotted with a 9 or 10 tile attack range.",
     "A slash attack severs the Aquanite lure and reduces stab Defence by 50, from 60 to 10.",
-    "Damage is not required to sever the lure.",
-    "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing.",
+    "Damage is not required to sever the lure, but the attack option must be set to slash.",
+    "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing; a two-style weapon such as the Ghrazi rapier can swap between slash and stab instead.",
     "Voidwaker special attack does not sever the lure because it is Magic-based, but regular Voidwaker slash attacks can sever it.",
-    "Burning claws burn damage should only be used after the lure is severed, otherwise the burn is nulled when the lure is cut.",
-    "Elder aquanites can spawn after Bigger and Badder and have a 35-damage special if Protect from Magic has been active for some time."
+    "Burning claws and Arkan blade burn damage should only be applied after the lure is severed, otherwise the burn is nulled when the lure is cut.",
+    "Elder aquanites spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); their special disables protection prayers and hits up to 50 if Protect from Magic has been active for some time."
   ],
   "methods": [
     {
       "methodId": "general",
       "label": "General strategy",
       "role": "general",
-      "summary": "Use Protect from Magic, sever the Aquanite lure with slash, then kill with high-damage melee, usually stab-focused after the defence reduction.",
+      "summary": "Use Protect from Magic, sever the Aquanite lure with slash, then kill with high-damage melee, usually stab-focused after the defence reduction; ranged is the alternative.",
       "recommendedFor": [
-        "baseline Aquanite tasks",
-        "players using melee switch setup"
+        "baseline Aquanite tasks"
       ],
       "requiredOrKeyItems": [
-        "Slayer helmet (i)",
         "Fast slash weapon",
-        "Stab melee weapon",
-        "Prayer potions",
-        "Bonecrusher",
-        "Seed box",
-        "Reagent pouch"
+        "Stab melee weapon"
       ],
       "prayers": [
         "Protect from Magic",
-        "Piety for melee"
+        "Piety for melee, Rigour or Deadeye for ranged"
       ],
       "steps": [
         "Enter Ynysdail Cavern and keep Protect from Magic active against normal Aquanites.",
         "Open by landing any slash attack to sever the Aquanite lure.",
         "After the lure is severed, switch to the strongest available stab or high-DPS melee weapon.",
-        "Use High Level Alchemy runes for alchable drops if desired.",
-        "Use Seed box for seed drops and Reagent pouch for common snape grass drops."
+        "Optional: bring a rune pouch with Nature and Fire runes for High Level Alchemy on alchable drops.",
+        "Optional: bring a Seed box for seed drops and a Reagent pouch for the common snape grass drops; without a Reagent pouch, Ranarr potion (unf) can be combined with snape grass drops."
       ],
       "risks": [
         "Do not rely on cannon because it cannot be placed in the cavern.",
         "Elder aquanite special attacks punish leaving Protect from Magic active continuously."
       ],
       "notes": [
-        "Ranged 80+ with Deadeye or Rigour is listed as a recommended skill option, but the page's equipment tab focuses on melee slash/stab.",
-        "Melee recommendations are Attack 80+, Strength 80+, and Prayer 70 for Piety."
-      ]
+        "Recommended ranged skills are Ranged 80+ and Prayer 63 for Deadeye or 74 for Rigour.",
+        "Recommended melee skills are Attack 80+, Strength 80+, and Prayer 70 for Piety."
+      ],
+      "advisor": {
+        "selectable": false,
+        "coverageStatus": "Procedural overview reviewed against wiki revision 15354865"
+      }
     },
     {
       "methodId": "melee-slash-stab",
       "label": "Melee Slash/Stab",
       "combatStyle": "MELEE",
       "role": "default",
-      "summary": "Use a slash weapon to cut the lure, then stab or strong melee weapons to benefit from the reduced stab Defence.",
+      "summary": "Use a slash attack to cut the lure, then stab or strong melee weapons to benefit from the reduced stab Defence.",
       "recommendedFor": [
         "default task completion",
         "players with stab melee weapons",
@@ -102,13 +121,7 @@
       ],
       "requiredOrKeyItems": [
         "Abyssal whip or another fast 4-tick slash weapon",
-        "Soulreaper axe",
-        "Ghrazi rapier",
-        "Osmumten's fang",
-        "Blade of saeldor on stab",
-        "Abyssal dagger",
-        "Voidwaker",
-        "Saradomin godsword special attack"
+        "Stab melee weapon"
       ],
       "prayers": [
         "Protect from Magic",
@@ -118,16 +131,20 @@
         "Start the kill with a slash attack to sever the lure.",
         "If using Voidwaker, use its regular slash attack to sever; its Magic-based special attack will not sever the lure.",
         "After severing, switch to the best stab or high-DPS melee weapon.",
-        "Use Burning claws only after severing the lure so burn damage is not nulled by the lure cut.",
-        "Use Saradomin godsword special attack for sustain if no other special attack weapon is brought."
+        "Apply Burning claws or Arkan blade burns only after severing the lure so the burn is not nulled by the lure cut.",
+        "Saradomin godsword special attack can sever the lure and restore Prayer points if no other special attack weapon is brought."
       ],
       "fallbacks": [
-        "If no dedicated slash switch is available, use a scimitar or Abyssal whip.",
+        "If no dedicated slash switch is available, use a scimitar or Abyssal whip, or set a two-style weapon to slash.",
         "If no premium stab weapon is available, use the best available melee weapon after severing."
       ],
       "risks": [
         "Skipping the slash sever leaves much higher stab Defence and lowers accuracy.",
         "Soulreaper axe users may need emergency food."
+      ],
+      "notes": [
+        "Oathplate chest and legs are listed first only when using a Soulreaper axe or Scythe of Vitur.",
+        "Blade of Saeldor, Voidwaker and Noxious halberd should be used on the stab attack style after severing."
       ],
       "equipment": {
         "slots": {
@@ -149,7 +166,7 @@
           "cape": [
             "Infernal cape",
             "Fire cape",
-            "Ardougne cloak 4",
+            "Ardougne cloak",
             "Mixed hide cape"
           ],
           "body": [
@@ -186,6 +203,17 @@
             "Avernic defender",
             "Dragon defender"
           ],
+          "ammo": [
+            "Rada's blessing 4",
+            "Rada's blessing 3",
+            "Rada's blessing 2",
+            "Peaceful blessing",
+            "Holy blessing",
+            "Unholy blessing",
+            "Honourable blessing",
+            "War blessing",
+            "Ancient blessing"
+          ],
           "hands": [
             "Ferocious gloves",
             "Bracelet of slaughter",
@@ -216,8 +244,8 @@
       "inventory": [
         "Dragon claws",
         "Abyssal whip",
-        "Divine super combat potions",
-        "Prayer potions",
+        "4 Divine super combat potions",
+        "14 Prayer potions",
         "Emergency food for Elder aquanites or Soulreaper axe use",
         "Bonecrusher",
         "Reagent pouch",
@@ -225,14 +253,150 @@
         "Seed box",
         "Rune pouch with Nature and Fire runes",
         "Teleport to house tablet"
-      ]
+      ],
+      "advisor": {
+        "inventory": [
+          {
+            "name": "Prayer potion(4)",
+            "quantity": 14,
+            "required": false
+          },
+          {
+            "name": "Divine super combat potion(4)",
+            "quantity": 4,
+            "required": false
+          },
+          {
+            "name": "Bonecrusher",
+            "quantity": 1,
+            "required": false
+          },
+          {
+            "name": "Reagent pouch",
+            "quantity": 1,
+            "required": false
+          },
+          {
+            "name": "Holy wrench",
+            "quantity": 1,
+            "required": false
+          },
+          {
+            "name": "Seed box",
+            "quantity": 1,
+            "required": false
+          },
+          {
+            "name": "Rune pouch",
+            "quantity": 1,
+            "required": false
+          },
+          {
+            "name": "Teleport to house (tablet)",
+            "quantity": 1,
+            "required": false
+          }
+        ],
+        "switches": [
+          {
+            "name": "Dragon claws or Saradomin godsword or Voidwaker or Burning claws or Arkan blade or Dragon dagger",
+            "quantity": 1,
+            "required": false
+          },
+          {
+            "name": "Abyssal whip or Abyssal tentacle or Dragon scimitar or Rune scimitar",
+            "quantity": 1,
+            "required": false
+          }
+        ],
+        "coverageStatus": "Melee Slash/Stab equipment, special attacks and inventory reviewed against wiki revision 15354865",
+        "equipmentReviewed": true
+      }
+    },
+    {
+      "methodId": "ranged",
+      "label": "Range",
+      "combatStyle": "RANGED",
+      "role": "alternative",
+      "summary": "Use Protect from Magic with the wiki Range setup: Toxic blowpipe or Twisted bow, then Bow of Faerdhinen, Zaryte crossbow or Crystal bow. Aquanites can also be safespotted with a 9 or 10 tile attack range.",
+      "recommendedFor": [
+        "players with stronger ranged than melee gear",
+        "safespotting with a 9 or 10 tile attack range"
+      ],
+      "prayers": [
+        "Protect from Magic",
+        "Rigour or Deadeye"
+      ],
+      "steps": [
+        "Keep Protect from Magic active against normal Aquanites.",
+        "Attack with the best available ranged weapon; the lure sever only lowers stab Defence, so no slash switch is needed.",
+        "Optionally attack from the wiki safespot tiles with a weapon that has a 9 or 10 tile attack range.",
+        "Flick Protect from Magic against Elder aquanites.",
+        "Optional: bring a rune pouch with runes for High Level Alchemy and Teleport to House."
+      ],
+      "risks": [
+        "Aquanites have 100 ranged Defence, so ranged is generally slower than a severed-lure stab setup."
+      ],
+      "notes": [
+        "Crystal helm, body and legs are listed only when using a Bow of Faerdhinen or Crystal bow.",
+        "A shield is only used with a one-handed weapon."
+      ],
+      "inventory": [
+        "6 Divine ranging potions",
+        "14 Prayer potions",
+        "Bonecrusher",
+        "Holy wrench",
+        "Seed box",
+        "Reagent pouch",
+        "Rune pouch with Nature, Fire, Law and Dust runes"
+      ],
+      "advisor": {
+        "inventory": [
+          {
+            "name": "Prayer potion(4)",
+            "quantity": 14,
+            "required": false
+          },
+          {
+            "name": "Divine ranging potion(4)",
+            "quantity": 6,
+            "required": false
+          },
+          {
+            "name": "Bonecrusher",
+            "quantity": 1,
+            "required": false
+          },
+          {
+            "name": "Holy wrench",
+            "quantity": 1,
+            "required": false
+          },
+          {
+            "name": "Seed box",
+            "quantity": 1,
+            "required": false
+          },
+          {
+            "name": "Reagent pouch",
+            "quantity": 1,
+            "required": false
+          },
+          {
+            "name": "Rune pouch",
+            "quantity": 1,
+            "required": false
+          }
+        ],
+        "switches": []
+      }
     },
     {
       "methodId": "elder-aquanite",
       "label": "Elder aquanite",
       "combatStyle": "MELEE",
       "role": "superior",
-      "summary": "Elder aquanites are superior spawns; flick Protect from Magic instead of leaving it on continuously to avoid their 35-damage special.",
+      "summary": "Elder aquanites are superior spawns; flick Protect from Magic instead of leaving it on continuously to avoid their prayer-disabling special, which hits up to 50.",
       "recommendedFor": [
         "superior spawns after Bigger and Badder"
       ],
@@ -244,20 +408,21 @@
         "Flick Protect from Magic between attacks"
       ],
       "steps": [
-        "Recognize the Elder aquanite superior spawn.",
+        "Recognize the Elder aquanite superior spawn (1/200 on task, 1/150 with the elite Combat Achievements).",
         "Do not leave Protect from Magic active continuously.",
-        "flick Protect from Magic on and off between the enemy's attacks.",
-        "Continue using the slash-to-stab melee approach."
+        "Flick Protect from Magic on and off between the enemy's attacks.",
+        "Continue using the slash-to-stab melee approach; slash also severs the Elder aquanite's lure."
       ],
       "risks": [
-        "The special attack deals 35 damage if Protect from Magic has been active for some time."
+        "The special attack disables protection prayers and hits up to 50 if Protect from Magic has been active for some time.",
+        "Normal attacks can hit up to 34."
       ]
     },
     {
       "methodId": "access",
       "label": "Getting to Ynysdail",
       "role": "access",
-      "summary": "Reach Ynysdail by Sailing with an adamant keel or better, then build the rowboat hotspot for easier future access.",
+      "summary": "Reach Ynysdail by Sailing with an adamant keel or better, then build the rowboat hotspot for easier future access from north of Gwenith.",
       "recommendedFor": [
         "first-time access",
         "return-trip setup"
@@ -265,7 +430,7 @@
       "requiredOrKeyItems": [
         "73 Sailing",
         "Boat with adamant keel or better",
-        "70 Construction",
+        "50 Construction",
         "Hammer",
         "Saw",
         "10 swamp paste",
@@ -273,10 +438,11 @@
         "Song of the Elves for the Gwenith rowboat route"
       ],
       "steps": [
-        "For first access, sail manually to Ynysdail with an adamant keel or better.",
+        "For first access, sail manually to Ynysdail with an adamant keel or better, entering through the green portal east of Lledrith Island.",
         "Build the rowboat hotspot on the island.",
-        "After building it, use rowboats between Ynysdail and north of Gwenith.",
-        "Complete Song of the Elves to use the Gwenith-side rowboat route."
+        "After building it, use rowboats between Ynysdail and north of Gwenith; teleport to Prifddinas and exit north to reach the mainland rowboat.",
+        "Complete Song of the Elves to use the Gwenith-side rowboat route.",
+        "Enter Ynysdail Cavern from the island to reach the Aquanites."
       ],
       "risks": [
         "Without the rowboat or a greater teleport focus on the ship, returning may require resetting the ship to a mooring point."
@@ -304,11 +470,6 @@
             "Abyssal dagger",
             "Belle's folly"
           ],
-          "secondary": [
-            "Abyssal whip",
-            "Saradomin godsword",
-            "Scimitar"
-          ],
           "special": [
             "Dragon claws",
             "Saradomin godsword",
@@ -318,6 +479,10 @@
             "Dragon dagger"
           ]
         }
+      },
+      "advisor": {
+        "selectable": false,
+        "coverageStatus": "Equipment reference; the selectable melee setup is Melee Slash/Stab"
       }
     }
   ]

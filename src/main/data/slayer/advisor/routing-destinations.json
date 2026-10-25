@@ -1220,109 +1220,34 @@
         "aquanite"
       ],
       "locationId": "aquanite-cavern-sailing",
-      "label": "Aquanite cavern (Sailing) - Aquanite",
-      "arrival": "MONSTER",
+      "label": "Ynysdail Cavern entrance - continue to aquanites",
+      "arrival": "ENTRANCE",
       "points": [
         {
-          "x": 2248,
-          "y": 9862,
-          "plane": 0
-        },
-        {
-          "x": 2249,
-          "y": 9837,
-          "plane": 0
-        },
-        {
-          "x": 2251,
-          "y": 9852,
-          "plane": 0
-        },
-        {
-          "x": 2251,
-          "y": 9859,
-          "plane": 0
-        },
-        {
-          "x": 2253,
-          "y": 9835,
-          "plane": 0
-        },
-        {
-          "x": 2253,
-          "y": 9841,
-          "plane": 0
-        },
-        {
-          "x": 2253,
-          "y": 9863,
-          "plane": 0
-        },
-        {
-          "x": 2255,
-          "y": 9846,
-          "plane": 0
-        },
-        {
-          "x": 2261,
-          "y": 9845,
-          "plane": 0
-        },
-        {
-          "x": 2262,
-          "y": 9852,
-          "plane": 0
-        },
-        {
-          "x": 2266,
-          "y": 9842,
-          "plane": 0
-        },
-        {
-          "x": 2268,
-          "y": 9848,
-          "plane": 0
-        },
-        {
-          "x": 2279,
-          "y": 9872,
-          "plane": 0
-        },
-        {
-          "x": 2281,
-          "y": 9867,
-          "plane": 0
-        },
-        {
-          "x": 2283,
-          "y": 9861,
-          "plane": 0
-        },
-        {
-          "x": 2285,
-          "y": 9865,
+          "x": 2218,
+          "y": 3477,
           "plane": 0
         }
       ],
       "evidence": [
         {
-          "url": "https://oldschool.runescape.wiki/w/Aquanite",
-          "title": "Aquanite",
-          "pageId": 97955,
-          "revisionId": 15290196,
-          "timestamp": "2026-08-08T01:27:25Z",
+          "url": "https://oldschool.runescape.wiki/w/Ynysdail_Cavern",
+          "title": "Ynysdail Cavern",
+          "pageId": 612717,
+          "revisionId": 15212230,
+          "timestamp": "2026-05-17T04:35:19Z",
           "missing": false
         },
         {
-          "url": "https://oldschool.runescape.wiki/w/Module%3AMap",
-          "title": "Module:Map",
-          "pageId": 219625,
-          "revisionId": 15317770,
-          "timestamp": "2026-08-24T05:10:10Z",
+          "url": "https://github.com/Skretzo/shortest-path/blob/6ca996a41a6a4b85d0fdb38dc6d56c66b747e29a/src/main/resources/transports/boats.tsv#L184",
+          "title": "src/main/resources/transports/boats.tsv:184",
+          "pageId": 0,
+          "revisionId": 0,
+          "timestamp": "2026-09-03T01:19:09Z",
           "missing": false
         }
       ],
-      "note": "Spawn locations for the selected monster in this area."
+      "note": "Route ends at the cavern entrance on Ynysdail. Shortest Path uses the Gwenith rowboat only once it is built; otherwise sail to Ynysdail (73 Sailing, adamant keel). Continue inside to the aquanites manually."
     },
     {
       "id": "araxxor-at-araxxor-lair",

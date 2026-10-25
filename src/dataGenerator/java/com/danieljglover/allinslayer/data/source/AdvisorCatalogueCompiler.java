@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -43,6 +44,8 @@ public final class AdvisorCatalogueCompiler
         "access", "finisher", "phase", "phase-one", "phase-two", "phase-three", "phase-four",
         "boss-phase", "phase-management", "specials", "utility", "special", "rotation", "overview",
         "location", "konar", "konar-location", "required", "requirements", "decision", "optimization", "equipment", "prayer-training"));
+    // A task note that describes the variant itself as the superior, not one that mentions its superior.
+    private static final Pattern SUPERIOR_NOTE = Pattern.compile("(?i)^(?:superior\\b|the superior version of\\b)");
     private final Path root;
     private final SlayerCatalogue catalogue = new SlayerCatalogue();
     private final Map<String, JsonObject> items = new LinkedHashMap<>();
@@ -52,6 +55,8 @@ public final class AdvisorCatalogueCompiler
     private final Map<String, List<String>> methodLocationExclusions = new LinkedHashMap<>();
     private final Map<String, JsonObject> weapons = new LinkedHashMap<>();
     private final Map<String, Integer> unresolved = new LinkedHashMap<>();
+    private final Map<String, String> superiorVariants = new LinkedHashMap<>();
+    private final Map<String, Set<String>> warnings = new LinkedHashMap<>();
     private JsonObject audit;
     private JsonObject wikiEquipment;
     private JsonObject overrides;
@@ -87,6 +92,7 @@ public final class AdvisorCatalogueCompiler
         report.addProperty("methodsWithAllSlots", result.getMethods().values().stream()
             .filter(m -> m.getEquipment().keySet().containsAll(SLOTS)).count());
         report.add("unresolvedNames", GSON.toJsonTree(compiler.unresolved));
+        report.add("warnings", GSON.toJsonTree(compiler.warnings));
         try (Writer writer = Files.newBufferedWriter(coverage, StandardCharsets.UTF_8))
         {
             GSON.toJson(report, writer);
@@ -95,6 +101,7 @@ public final class AdvisorCatalogueCompiler
             + result.getTasks().size() + " tasks, " + result.getMonsters().size() + " variants, "
             + result.getMethods().size() + " methods; " + compiler.unresolved.size()
             + " unresolved authored item labels retained as guidance (see advisor-coverage.json)");
+        compiler.warnings.forEach((kind, entries) -> System.out.println("Advisor warning: " + entries.size() + " " + kind));
     }
 
     private SlayerCatalogue compile() throws IOException
@@ -115,6 +122,7 @@ public final class AdvisorCatalogueCompiler
         RouteDestinationCompiler.load(root, catalogue);
         TripPreparationCompiler.load(root, catalogue);
         validate();
+        warnUnreviewedSelections();
         return catalogue;
     }
 
@@ -382,16 +390,23 @@ public final class AdvisorCatalogueCompiler
                 {
                     JsonObject row = raw.getAsJsonObject();
                     if (!monsterId.equals(string(row, "variantId"))) continue;
+                    if (strings(row, "notes").stream().anyMatch(note -> SUPERIOR_NOTE.matcher(note.trim()).find()))
+                    {
+                        superiorVariants.put(monsterId, task.getId());
+                    }
                     for (String name : strings(row, "locations"))
                     {
+                        boolean matched = false;
                         for (String locationId : task.getLocationIds())
                         {
                             Location location = catalogue.getLocations().get(locationId);
                             if (location != null && key(location.getName()).equals(key(name)))
                             {
                                 add(monster.getLocationIds(), locationId);
+                                matched = true;
                             }
                         }
+                        if (!matched) warn("variantInfo locations matching no task location name", task.getId() + "/" + monsterId + ": " + name);
                     }
                 }
                 if (monster.getLocationIds().isEmpty() && !monster.isBoss())
@@ -995,6 +1010,38 @@ public final class AdvisorCatalogueCompiler
                 for (ItemOption option : slot.getValue()) for (int id : option.getItemIds()) if (id <= 0) throw new IllegalArgumentException("Invalid equipment item ID " + id);
             }
         }
+    }
+
+    // These gaps fall back silently at runtime, so report them without changing the catalogue.
+    private void warnUnreviewedSelections()
+    {
+        Set<String> routed = new LinkedHashSet<>();
+        for (RouteDestination route : catalogue.getRouteDestinations().values())
+        {
+            for (String monsterId : route.getMonsterIds()) routed.add(monsterId + " @ " + route.getLocationId());
+        }
+        for (Method method : catalogue.getMethods().values())
+        {
+            if (!method.isSelectable()) continue;
+            for (String monsterId : method.getMonsterIds())
+            {
+                String task = superiorVariants.get(monsterId);
+                if (task != null) warn("superior variants in selectable methods (set advisorRepeatable false)", monsterId + " (" + task + ")");
+                for (String locationId : method.getLocationIds())
+                {
+                    String pair = monsterId + " @ " + locationId;
+                    if (catalogue.getMonsters().get(monsterId).getLocationIds().contains(locationId) && !routed.contains(pair))
+                    {
+                        warn("selectable monster/location pairs without a route destination", pair);
+                    }
+                }
+            }
+        }
+    }
+
+    private void warn(String kind, String entry)
+    {
+        warnings.computeIfAbsent(kind, ignored -> new TreeSet<>()).add(entry);
     }
 
     private static void references(String owner, List<String> ids, Map<String, ?> targets)

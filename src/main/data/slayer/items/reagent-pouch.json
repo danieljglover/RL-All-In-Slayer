@@ -1,0 +1,8 @@
+{
+  "itemKey": "reagent-pouch",
+  "name": "Reagent pouch",
+  "aliases": ["open reagent pouch"],
+  "itemIds": [29996, 29998],
+  "stackable": false,
+  "dosed": false
+}

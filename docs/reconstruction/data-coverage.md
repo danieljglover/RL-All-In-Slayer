@@ -99,7 +99,7 @@ retained as evidence, and explicit current main-page links are recorded in
 `advisor/page-links.json` where available. Every record remains labelled
 `evidence-fetched-not-reviewed`; retrieval alone is not semantic verification.
 
-At this checkpoint 125 records have only missing direct page evidence: 124
+At this checkpoint 124 records have only missing direct page evidence: 123
 location labels and the aggregate Boss task. Many location labels are local
 subareas described on a parent task, monster or dungeon page, and Boss is an
 aggregate assignment. Their retained task/location prose and linked methods do
@@ -170,11 +170,12 @@ It adds existing cross-family alternatives plus Scurrius solo/group preparation
 and a source-verified Wilderness skeleton variant. Incidental encounters remain
 visible but are excluded from repeatable recommendations.
 
-The following 19 variants have no selectable preparation: eight superior
+The following 20 variants have no selectable preparation: nine superior
 encounters, four reanimated forms, five boss summons, and two incidental or
 quest forms.
 
 - `dreadborn-araxyte`
+- `elder-aquanite`
 - `monstrous-basilisk`
 - `kolodion-final-form`
 - `reanimated-bloodveld`
@@ -258,7 +259,6 @@ editable source input.
 - `tasks/boss.json`
 - `locations/ammonite-crabs-fossil-island.json`
 - `locations/ancient-cavern-waterfiends.json`
-- `locations/aquanite-cavern-sailing.json`
 - `locations/araxxor-lair.json`
 - `locations/araxyte-lair-morytania.json`
 - `locations/asgarnian-ice-dungeon-task-only.json`

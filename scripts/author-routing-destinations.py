@@ -537,7 +537,27 @@ def location_entrance(lid, pages, transport_root):
     return {'label': title + ' entrance - continue to selected monsters', 'arrival': 'ENTRANCE',
         'points': points, 'evidence': evidence, 'note': note.strip()}
 
+def ynysdail_cavern_entrance(pages, transport_root):
+    # Shortest Path has no transport into Ynysdail Cavern, so its spawn tiles are
+    # unreachable. Route to the surface entrance pin; the island is reached by the
+    # Gwenith rowboat once built.
+    body = wiki.body(pages['Ynysdail Cavern'])
+    maps = [wiki.params(b) for _, _, b in wiki.templates(body) if wiki.params(b)[0] == 'map']
+    _, data, positional = next(m for m in maps if m[1].get('caption') == 'The entrance to the cavern.')
+    if data.get('mtype') != 'pin' or data.get('mapid', '0') != '0':
+        raise ValueError('Reviewed entrance Map template changed: Ynysdail Cavern')
+    points = [tuple(int(n) for n in value.split(',')) + (0,) for value in positional if re.fullmatch(r'\s*\d+,\d+\s*', value)]
+    if not points:
+        raise ValueError('Reviewed entrance pin missing: Ynysdail Cavern')
+    _, rowboat = transport_points(transport_root, 'boats.tsv', [184], 0, 'Travel Rowboat 58641')
+    return {'label': 'Ynysdail Cavern entrance - continue to aquanites', 'arrival': 'ENTRANCE',
+        'points': points, 'evidence': [wiki.evidence(pages['Ynysdail Cavern'])] + rowboat,
+        'note': 'Route ends at the cavern entrance on Ynysdail. Shortest Path uses the Gwenith rowboat only once it is built; '
+            'otherwise sail to Ynysdail (73 Sailing, adamant keel). Continue inside to the aquanites manually.'}
+
 def entrance(mid, monster, lid, pages, transport_root):
+    if lid == 'aquanite-cavern-sailing' and mid == 'aquanite':
+        return ynysdail_cavern_entrance(pages, transport_root)
     # Conditional encounters and superior spawns do not become independent routes
     # merely because an inherited catalogue join mentions the boss location.
     minions = {'skeleton-hellhound-calvar-ion', 'greater-skeleton-hellhound-calvar-ion',
@@ -622,7 +642,7 @@ def main():
     needed.update(t for entry in ENTRANCES.values() for t in entry[3])
     needed.update(('Module:Map', 'RuneScape:Map/mapIDs', 'Shellbane Gryphon', 'King Black Dragon', 'Catacombs of Kourend',
         'Cave (Morytania Spider Cave)', 'Broken bars', 'Abyssal Nexus', "Cerberus' Lair", 'Mole hill', 'Forthos Dungeon',
-        'Scorpia', 'Smoke Devil Dungeon'))
+        'Scorpia', 'Smoke Devil Dungeon', 'Ynysdail Cavern'))
     needed.update(t for t, _ in LOCATION_ENTRANCES.values())
     client.fetch(needed - pages.keys())
     pages.update(client.pages)

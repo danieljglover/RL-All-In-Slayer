@@ -1,11 +1,24 @@
 {
   "locationId": "aquanite-cavern-sailing",
-  "name": "Aquanite cavern (Sailing)",
+  "name": "Ynysdail Cavern",
   "multi": false,
   "cannon": false,
   "burst": false,
   "konarLockable": false,
-  "safeSpot": false,
+  "safeSpot": true,
   "wilderness": false,
-  "accessNote": "Ynysdail Cavern beneath Ynysdail. Requires Sailing 73 and a boat with an adamant keel or better for first access; build the Ynysdail rowboat hotspot for later travel between Ynysdail and north of Gwenith."
+  "accessNote": "Ynysdail Cavern beneath Ynysdail, north of Gwenith; the only Aquanite location (16 spawns). Mooring at Ynysdail requires 73 Sailing, and the first trip must be sailed with an adamant keel or better. Build the Ynysdail rowboat (50 Construction) to travel between Ynysdail and north of Gwenith afterwards; using it requires Song of the Elves.",
+  "sourceUrl": "https://oldschool.runescape.wiki/w/Ynysdail_Cavern",
+  "advisorRequirements": [
+    "SAILING >= 73"
+  ],
+  "travel": {
+    "items": [
+      {
+        "itemKey": "teleport-crystal",
+        "quantity": 1
+      }
+    ],
+    "note": "Teleport crystal to Prifddinas (Song of the Elves), exit north and take the Ynysdail rowboat north of Gwenith once it is built; otherwise sail to Ynysdail with an adamant keel or better."
+  }
 }

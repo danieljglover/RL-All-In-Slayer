@@ -1,0 +1,8 @@
+{
+  "itemKey": "bonecrusher",
+  "name": "Bonecrusher",
+  "aliases": ["bonecrushers"],
+  "itemIds": [13116],
+  "stackable": false,
+  "dosed": false
+}

@@ -1108,21 +1108,24 @@
       ],
       "notes": [
         "Aquanites require 78 Slayer to kill and no combat level requirement.",
-        "Accessing Ynysdail requires 73 Sailing and a boat with an adamant keel or better.",
-        "To receive Aquanites as a Slayer task, players must first unlock Lured In for 80 Slayer reward points.",
-        "Nieve assigns 40-60 Aquanites and Duradel assigns 30-50 Aquanites.",
-        "Let's Stay All Aquanite extends Aquanite assignments to 150-200.",
-        "Aquanites can drop the Aquanite tendon used to make the Aquanite hopper.",
+        "Mooring at Ynysdail requires 73 Sailing; the first trip must be sailed with an adamant keel or better, entering through the green portal east of Lledrith Island.",
+        "Nieve and Duradel assign Aquanites only after the Lured In unlock (80 Slayer reward points); Mortimer can assign them without it.",
+        "Nieve assigns 40-60, Duradel 30-50 and Mortimer 40-60 Aquanites.",
+        "Let's Stay All Aquanite (100 points) extends Aquanite assignments to 150-200.",
+        "Mortimer's quantity modifier adds 50-100 Aquanites (90-160, or 200-300 when extended).",
+        "Aquanites drop the Aquanite tendon (1/3500, or 1/750 on task), used to make the Aquanite hopper.",
         "Aquanites attack with Magic and have high accuracy, so Protect from Magic is highly recommended.",
+        "Aquanites can be safespotted with a 9 or 10 tile attack range.",
         "Aquanites are in single-way combat, and a Dwarf multicannon cannot be used because the ground is too damp.",
-        "slash attack severs the Aquanite lure, reducing stab Defence by 50 from 60 to 10; damage is not required to sever the lure.",
-        "Use a fast 4-tick slash weapon such as a scimitar or Abyssal whip to sever the lure before using stab weapons.",
+        "A slash attack severs the Aquanite lure, reducing stab Defence by 50 from 60 to 10; damage is not required, but the attack option must be set to slash.",
+        "Use a fast 4-tick slash weapon such as a scimitar or Abyssal whip to sever the lure before using stab weapons, or swap a two-style weapon such as the Ghrazi rapier between slash and stab.",
         "Saradomin godsword special attack can sever the lure if no other special attack weapon is brought.",
-        "Elder Aquanites can spawn at 1/200 on task after Bigger and Badder and require flicking Protect from Magic to avoid their 35-damage special.",
+        "Elder aquanites can spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); flick Protect from Magic to avoid their prayer-disabling special, which hits up to 50.",
         "For first-time access, sail manually to Ynysdail and build the rowboat hotspot.",
-        "Building the rowboat requires 70 Construction, hammer, saw, 10 swamp paste, and 8 camphor planks.",
-        "After the rowboat is built, travel is possible between Ynysdail and north of Gwenith; using that rowboat requires Song of the Elves.",
-        "Use Protect from Magic. Sever the Aquanite lure with a fast slash weapon such as Abyssal whip or a scimitar, then use strong stab melee such as Soulreaper axe, Ghrazi rapier, Osmumten's fang, Blade of saeldor, Abyssal dagger, or Voidwaker. Flick Protect from Magic against Elder aquanites."
+        "Building the rowboat requires 50 Construction, hammer, saw, 10 swamp paste, and 8 camphor planks (the Rowboat amenity recipe; the Slayer task page states 70).",
+        "After the rowboat is built, travel is possible between Ynysdail and north of Gwenith (teleport to Prifddinas and exit north); using that rowboat requires Song of the Elves.",
+        "Without the rowboat or a greater teleport focus on the ship, returning may require resetting the ship to a mooring point.",
+        "Use Protect from Magic. For melee, sever the Aquanite lure with a slash attack from Abyssal whip, a scimitar or a weapon set to slash, then use strong stab or high-DPS melee such as Soulreaper axe, Scythe of Vitur, Ghrazi rapier, Osmumten's fang, Blade of Saeldor or Voidwaker. For ranged, use Toxic blowpipe or Twisted bow, Bow of Faerdhinen or Zaryte crossbow; a 9-10 tile safespot is available. Flick Protect from Magic against Elder aquanites."
       ],
       "requirements": [],
       "amounts": {
@@ -1134,31 +1137,50 @@
       "locationOverrides": {
         "aquanite-cavern-sailing": {
           "id": "aquanite-cavern-sailing",
-          "name": "Aquanite cavern (Sailing)",
+          "name": "Ynysdail Cavern",
           "assignmentAreaId": "",
           "wilderness": false,
           "multi": false,
           "cannon": false,
           "barrage": false,
-          "safespot": false,
+          "safespot": true,
           "taskOnly": false,
-          "requirements": [],
-          "notes": [
-            "Ynysdail Cavern beneath Ynysdail. Requires Sailing 73 and a boat with an adamant keel or better for first access; build the Ynysdail rowboat hotspot for later travel between Ynysdail and north of Gwenith.",
-            "Aquanites are found in Ynysdail Cavern beneath Ynysdail.",
-            "The area is single-way combat.",
-            "A Dwarf multicannon cannot be used because the ground is too damp."
+          "requirements": [
+            "SAILING >= 73"
           ],
-          "travel": [],
+          "notes": [
+            "Ynysdail Cavern beneath Ynysdail, north of Gwenith; the only Aquanite location (16 spawns). Mooring at Ynysdail requires 73 Sailing, and the first trip must be sailed with an adamant keel or better. Build the Ynysdail rowboat (50 Construction) to travel between Ynysdail and north of Gwenith afterwards; using it requires Song of the Elves.",
+            "Teleport crystal to Prifddinas (Song of the Elves), exit north and take the Ynysdail rowboat north of Gwenith once it is built; otherwise sail to Ynysdail with an adamant keel or better.",
+            "Aquanites are found only in Ynysdail Cavern beneath Ynysdail (16 spawns).",
+            "The area is single-way combat.",
+            "A Dwarf multicannon cannot be used because the ground is too damp.",
+            "Aquanites can be safespotted with a 9 or 10 tile attack range."
+          ],
+          "travel": [
+            {
+              "name": "teleport-crystal",
+              "itemIds": [
+                6102,
+                6101,
+                6100,
+                6099,
+                13102,
+                23946
+              ],
+              "quantity": 1,
+              "required": false,
+              "stackable": false
+            }
+          ],
           "requiredItems": [],
           "evidence": [
             {
-              "url": "https://oldschool.runescape.wiki/w/Aquanite_cavern_(Sailing)",
-              "title": "Aquanite cavern (Sailing)",
-              "timestamp": "",
-              "pageId": 0,
-              "revisionId": 0,
-              "missing": true
+              "url": "https://oldschool.runescape.wiki/w/Ynysdail_Cavern",
+              "title": "Ynysdail Cavern",
+              "timestamp": "2026-05-17T04:35:19Z",
+              "pageId": 612717,
+              "revisionId": 15212230,
+              "missing": false
             }
           ]
         }
@@ -1167,9 +1189,9 @@
         {
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
+          "timestamp": "2026-09-24T01:12:46Z",
           "pageId": 630114,
-          "revisionId": 15333591,
+          "revisionId": 15354865,
           "missing": false
         }
       ]
@@ -19821,13 +19843,14 @@
       "methodIds": [
         "aquanite-general",
         "aquanite-melee-slash-stab",
+        "aquanite-ranged",
         "aquanite-access",
         "aquanite-equipment-melee-switch",
         "aquanite-wiki-equipment-1",
         "aquanite-wiki-equipment-2"
       ],
       "requirements": [
-        "Slayer 78; Sailing 73 + adamant keel; 'Lured In' unlock to be assigned"
+        "Slayer 78"
       ],
       "slayerLevel": 78,
       "boss": false,
@@ -19836,17 +19859,17 @@
         {
           "url": "https://oldschool.runescape.wiki/w/Aquanite",
           "title": "Aquanite",
-          "timestamp": "2026-08-08T01:27:25Z",
+          "timestamp": "2026-10-20T08:48:39Z",
           "pageId": 97955,
-          "revisionId": 15290196,
+          "revisionId": 15376641,
           "missing": false
         },
         {
           "url": "https://oldschool.runescape.wiki/w/Aquanite/Strategies",
           "title": "Aquanite/Strategies",
-          "timestamp": "2026-08-23T20:36:58Z",
+          "timestamp": "2026-09-24T01:27:59Z",
           "pageId": 631042,
-          "revisionId": 15317546,
+          "revisionId": 15354922,
           "missing": false
         }
       ]
@@ -19859,13 +19882,12 @@
         15503
       ],
       "combatLevel": 305,
-      "repeatable": true,
+      "repeatable": false,
       "locationIds": [
         "aquanite-cavern-sailing"
       ],
       "methodIds": [
         "aquanite-general",
-        "aquanite-melee-slash-stab",
         "aquanite-elder-aquanite",
         "aquanite-access",
         "aquanite-equipment-melee-switch",
@@ -19873,7 +19895,7 @@
         "aquanite-wiki-equipment-2"
       ],
       "requirements": [
-        "Slayer 78; Sailing 73 + adamant keel; 'Bigger and Badder' unlock"
+        "Slayer 78"
       ],
       "slayerLevel": 78,
       "boss": false,
@@ -19882,9 +19904,9 @@
         {
           "url": "https://oldschool.runescape.wiki/w/Elder_aquanite",
           "title": "Elder aquanite",
-          "timestamp": "2026-08-17T22:57:08Z",
+          "timestamp": "2026-10-20T08:48:23Z",
           "pageId": 608471,
-          "revisionId": 15304634,
+          "revisionId": 15376640,
           "missing": false
         },
         {
@@ -38744,28 +38766,46 @@
     },
     "aquanite-cavern-sailing": {
       "id": "aquanite-cavern-sailing",
-      "name": "Aquanite cavern (Sailing)",
+      "name": "Ynysdail Cavern",
       "assignmentAreaId": "",
       "wilderness": false,
       "multi": false,
       "cannon": false,
       "barrage": false,
-      "safespot": false,
+      "safespot": true,
       "taskOnly": false,
-      "requirements": [],
-      "notes": [
-        "Ynysdail Cavern beneath Ynysdail. Requires Sailing 73 and a boat with an adamant keel or better for first access; build the Ynysdail rowboat hotspot for later travel between Ynysdail and north of Gwenith."
+      "requirements": [
+        "SAILING >= 73"
       ],
-      "travel": [],
+      "notes": [
+        "Ynysdail Cavern beneath Ynysdail, north of Gwenith; the only Aquanite location (16 spawns). Mooring at Ynysdail requires 73 Sailing, and the first trip must be sailed with an adamant keel or better. Build the Ynysdail rowboat (50 Construction) to travel between Ynysdail and north of Gwenith afterwards; using it requires Song of the Elves.",
+        "Teleport crystal to Prifddinas (Song of the Elves), exit north and take the Ynysdail rowboat north of Gwenith once it is built; otherwise sail to Ynysdail with an adamant keel or better."
+      ],
+      "travel": [
+        {
+          "name": "teleport-crystal",
+          "itemIds": [
+            6102,
+            6101,
+            6100,
+            6099,
+            13102,
+            23946
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        }
+      ],
       "requiredItems": [],
       "evidence": [
         {
-          "url": "https://oldschool.runescape.wiki/w/Aquanite_cavern_(Sailing)",
-          "title": "Aquanite cavern (Sailing)",
-          "timestamp": "",
-          "pageId": 0,
-          "revisionId": 0,
-          "missing": true
+          "url": "https://oldschool.runescape.wiki/w/Ynysdail_Cavern",
+          "title": "Ynysdail Cavern",
+          "timestamp": "2026-05-17T04:35:19Z",
+          "pageId": 612717,
+          "revisionId": 15212230,
+          "missing": false
         }
       ]
     },
@@ -96512,6 +96552,7 @@
         {
           "name": "Bonecrusher or Bonecrusher necklace",
           "itemIds": [
+            13116,
             22986
           ],
           "quantity": 1,
@@ -96762,6 +96803,7 @@
         {
           "name": "Bonecrusher or Bonecrusher necklace",
           "itemIds": [
+            13116,
             22986
           ],
           "quantity": 1,
@@ -97903,7 +97945,7 @@
       "name": "General strategy",
       "style": "MELEE",
       "role": "general",
-      "summary": "Use Protect from Magic, sever the Aquanite lure with slash, then kill with high-damage melee, usually stab-focused after the defence reduction.",
+      "summary": "Use Protect from Magic, sever the Aquanite lure with slash, then kill with high-damage melee, usually stab-focused after the defence reduction; ranged is the alternative.",
       "monsterIds": [
         "aquanite",
         "elder-aquanite"
@@ -97914,427 +97956,39 @@
       "requirements": [],
       "guidance": [
         "78 Slayer is required to kill Aquanites.",
-        "73 Sailing and a boat with an adamant keel or better are required to reach Ynysdail.",
-        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites.",
-        "70 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel.",
+        "73 Sailing is required to moor at Ynysdail; the first trip needs a boat with an adamant keel or better.",
+        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites; Mortimer assigns them without it.",
+        "50 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel (the Slayer task page states 70; the Rowboat amenity recipe states 50).",
         "Using the rowboat between Ynysdail and north of Gwenith requires Song of the Elves.",
         "Aquanites attack with Magic and have high accuracy.",
         "Protect from Magic is highly recommended against normal Aquanites.",
         "The cavern is single-way combat.",
         "A Dwarf multicannon cannot be placed because the ground is too damp.",
+        "Aquanites can be safespotted with a 9 or 10 tile attack range.",
         "A slash attack severs the Aquanite lure and reduces stab Defence by 50, from 60 to 10.",
-        "Damage is not required to sever the lure.",
-        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing.",
+        "Damage is not required to sever the lure, but the attack option must be set to slash.",
+        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing; a two-style weapon such as the Ghrazi rapier can swap between slash and stab instead.",
         "Voidwaker special attack does not sever the lure because it is Magic-based, but regular Voidwaker slash attacks can sever it.",
-        "Burning claws burn damage should only be used after the lure is severed, otherwise the burn is nulled when the lure is cut.",
-        "Elder aquanites can spawn after Bigger and Badder and have a 35-damage special if Protect from Magic has been active for some time.",
+        "Burning claws and Arkan blade burn damage should only be applied after the lure is severed, otherwise the burn is nulled when the lure is cut.",
+        "Elder aquanites spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); their special disables protection prayers and hits up to 50 if Protect from Magic has been active for some time.",
         "baseline Aquanite tasks",
-        "players using melee switch setup",
         "Enter Ynysdail Cavern and keep Protect from Magic active against normal Aquanites.",
         "Open by landing any slash attack to sever the Aquanite lure.",
         "After the lure is severed, switch to the strongest available stab or high-DPS melee weapon.",
-        "Use High Level Alchemy runes for alchable drops if desired.",
-        "Use Seed box for seed drops and Reagent pouch for common snape grass drops.",
-        "Ranged 80+ with Deadeye or Rigour is listed as a recommended skill option, but the page's equipment tab focuses on melee slash/stab.",
-        "Melee recommendations are Attack 80+, Strength 80+, and Prayer 70 for Piety.",
+        "Optional: bring a rune pouch with Nature and Fire runes for High Level Alchemy on alchable drops.",
+        "Optional: bring a Seed box for seed drops and a Reagent pouch for the common snape grass drops; without a Reagent pouch, Ranarr potion (unf) can be combined with snape grass drops.",
+        "Recommended ranged skills are Ranged 80+ and Prayer 63 for Deadeye or 74 for Rigour.",
+        "Recommended melee skills are Attack 80+, Strength 80+, and Prayer 70 for Piety.",
         "Preparation prayer reference: Protect from Magic",
-        "Preparation prayer reference: Piety for melee",
+        "Preparation prayer reference: Piety for melee, Rigour or Deadeye for ranged",
         "Key item or prerequisite: Fast slash weapon",
-        "Key item or prerequisite: Stab melee weapon",
-        "Key item or prerequisite: Bonecrusher",
-        "Key item or prerequisite: Reagent pouch"
+        "Key item or prerequisite: Stab melee weapon"
       ],
       "risks": [
         "Do not rely on cannon because it cannot be placed in the cavern.",
         "Elder aquanite special attacks punish leaving Protect from Magic active continuously."
       ],
       "equipment": {
-        "HEAD": [
-          {
-            "name": "Slayer helmet (i)",
-            "itemIds": [
-              11865,
-              19641,
-              19645,
-              19649,
-              21266,
-              21890,
-              23075,
-              24444,
-              25177,
-              25179,
-              25181,
-              25183,
-              25185,
-              25187,
-              25189,
-              25191,
-              25900,
-              25902,
-              25906,
-              25908,
-              25912,
-              25914,
-              26674,
-              26675,
-              26676,
-              26677,
-              26678,
-              26679,
-              26680,
-              26681,
-              26682,
-              26683,
-              26684,
-              29818,
-              29820,
-              29822,
-              33068,
-              33070,
-              33072,
-              33439,
-              33441,
-              33443,
-              33445,
-              33447,
-              33449
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 10"
-            ]
-          },
-          {
-            "name": "Torva full helm",
-            "itemIds": [
-              26382
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 80"
-            ]
-          },
-          {
-            "name": "Neitiznot faceguard",
-            "itemIds": [
-              24271
-            ],
-            "requires": [],
-            "requirements": [
-              "Quest: The Fremennik Exiles",
-              "DEFENCE >= 70"
-            ]
-          },
-          {
-            "name": "Oathplate helm",
-            "itemIds": [
-              30750
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 78"
-            ]
-          },
-          {
-            "name": "Serpentine helm",
-            "itemIds": [
-              12931
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 75"
-            ]
-          },
-          {
-            "name": "Blood moon helm",
-            "itemIds": [
-              29028,
-              29047
-            ],
-            "requires": [],
-            "requirements": [
-              "STRENGTH >= 75",
-              "DEFENCE >= 50"
-            ]
-          },
-          {
-            "name": "Helm of Neitiznot",
-            "itemIds": [
-              10828
-            ],
-            "requires": [],
-            "requirements": [
-              "Quest: The Fremennik Isles",
-              "DEFENCE >= 55"
-            ]
-          }
-        ],
-        "AMULET": [
-          {
-            "name": "Amulet of rancour",
-            "itemIds": [
-              29801
-            ],
-            "requires": [],
-            "requirements": [
-              "HITPOINTS >= 90"
-            ]
-          },
-          {
-            "name": "Amulet of torture",
-            "itemIds": [
-              19553
-            ],
-            "requires": [],
-            "requirements": [
-              "HITPOINTS >= 75"
-            ]
-          },
-          {
-            "name": "Amulet of fury",
-            "itemIds": [
-              6585
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Amulet of glory",
-            "itemIds": [
-              1706,
-              1708,
-              1710,
-              1712,
-              11976,
-              11978,
-              1704
-            ],
-            "requires": [],
-            "requirements": []
-          }
-        ],
-        "CAPE": [
-          {
-            "name": "Infernal cape",
-            "itemIds": [
-              21295,
-              24224
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Fire cape",
-            "itemIds": [
-              6570,
-              24223
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Ardougne cloak 4",
-            "itemIds": [
-              13124
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Ardougne cloak 3",
-            "itemIds": [
-              13123
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Ardougne cloak 2",
-            "itemIds": [
-              13122
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Ardougne cloak 1",
-            "itemIds": [
-              13121
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Mixed hide cape",
-            "itemIds": [
-              29289
-            ],
-            "requires": [],
-            "requirements": [
-              "RANGED >= 60",
-              "DEFENCE >= 50"
-            ]
-          }
-        ],
-        "BODY": [
-          {
-            "name": "Oathplate chest",
-            "itemIds": [
-              30753
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 78"
-            ]
-          },
-          {
-            "name": "Torva platebody",
-            "itemIds": [
-              26384
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 80"
-            ]
-          },
-          {
-            "name": "Bandos chestplate",
-            "itemIds": [
-              11832
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 65"
-            ]
-          },
-          {
-            "name": "Blood moon chestplate",
-            "itemIds": [
-              29022,
-              29043
-            ],
-            "requires": [],
-            "requirements": [
-              "STRENGTH >= 75",
-              "DEFENCE >= 50"
-            ]
-          },
-          {
-            "name": "Fighter torso",
-            "itemIds": [
-              10551,
-              24175,
-              28067,
-              28069
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 40"
-            ]
-          },
-          {
-            "name": "Sunfire fanatic cuirass",
-            "itemIds": [
-              28936
-            ],
-            "requires": [],
-            "requirements": [
-              "PRAYER >= 60",
-              "DEFENCE >= 40"
-            ]
-          },
-          {
-            "name": "Proselyte hauberk",
-            "itemIds": [
-              9674
-            ],
-            "requires": [],
-            "requirements": [
-              "Quest: The Slug Menace",
-              "DEFENCE >= 30",
-              "PRAYER >= 20"
-            ]
-          }
-        ],
-        "LEGS": [
-          {
-            "name": "Oathplate legs",
-            "itemIds": [
-              30756
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 78"
-            ]
-          },
-          {
-            "name": "Torva platelegs",
-            "itemIds": [
-              26386
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 80"
-            ]
-          },
-          {
-            "name": "Bandos tassets",
-            "itemIds": [
-              11834
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 65"
-            ]
-          },
-          {
-            "name": "Blood moon tassets",
-            "itemIds": [
-              29025,
-              29045
-            ],
-            "requires": [],
-            "requirements": [
-              "STRENGTH >= 75",
-              "DEFENCE >= 50"
-            ]
-          },
-          {
-            "name": "Sunfire fanatic chausses",
-            "itemIds": [
-              28939
-            ],
-            "requires": [],
-            "requirements": [
-              "PRAYER >= 60",
-              "DEFENCE >= 40"
-            ]
-          },
-          {
-            "name": "Proselyte cuisse",
-            "itemIds": [
-              9676
-            ],
-            "requires": [],
-            "requirements": [
-              "Quest: The Slug Menace",
-              "DEFENCE >= 30",
-              "PRAYER >= 20"
-            ]
-          },
-          {
-            "name": "Proselyte tasset",
-            "itemIds": [
-              9678
-            ],
-            "requires": [],
-            "requirements": [
-              "Quest: The Slug Menace",
-              "DEFENCE >= 30",
-              "PRAYER >= 20"
-            ]
-          }
-        ],
         "WEAPON": [
           {
             "name": "Soulreaper axe",
@@ -98462,311 +98116,12 @@
               "ATTACK >= 75"
             ]
           }
-        ],
-        "SHIELD": [
-          {
-            "name": "Avernic defender",
-            "itemIds": [
-              22322,
-              24186
-            ],
-            "requires": [],
-            "requirements": [
-              "ATTACK >= 70",
-              "DEFENCE >= 70"
-            ]
-          },
-          {
-            "name": "Dragon defender",
-            "itemIds": [
-              12954,
-              24143
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 60"
-            ]
-          }
-        ],
-        "AMMO": [
-          {
-            "name": "Rada's blessing 4",
-            "itemIds": [
-              22947
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Rada's blessing 3",
-            "itemIds": [
-              22945
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Peaceful blessing",
-            "itemIds": [
-              20226
-            ],
-            "requires": [],
-            "requirements": []
-          }
-        ],
-        "HANDS": [
-          {
-            "name": "Ferocious gloves",
-            "itemIds": [
-              22981
-            ],
-            "requires": [],
-            "requirements": [
-              "ATTACK >= 80",
-              "DEFENCE >= 80"
-            ]
-          },
-          {
-            "name": "Bracelet of slaughter",
-            "itemIds": [
-              21183
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Barrows gloves",
-            "itemIds": [
-              7462
-            ],
-            "requires": [],
-            "requirements": []
-          }
-        ],
-        "FEET": [
-          {
-            "name": "Avernic treads (max)",
-            "itemIds": [
-              31097
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 80",
-              "STRENGTH >= 80",
-              "RANGED >= 80",
-              "MAGIC >= 80"
-            ]
-          },
-          {
-            "name": "Primordial boots",
-            "itemIds": [
-              13239
-            ],
-            "requires": [],
-            "requirements": [
-              "STRENGTH >= 75",
-              "DEFENCE >= 75"
-            ]
-          },
-          {
-            "name": "Dragon boots",
-            "itemIds": [
-              11840
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 60"
-            ]
-          },
-          {
-            "name": "Aranea boots",
-            "itemIds": [
-              29806
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Spiked manacles",
-            "itemIds": [
-              23389
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Mixed hide boots",
-            "itemIds": [
-              29286
-            ],
-            "requires": [],
-            "requirements": [
-              "RANGED >= 60",
-              "DEFENCE >= 50"
-            ]
-          }
-        ],
-        "RING": [
-          {
-            "name": "Ultor ring",
-            "itemIds": [
-              28307
-            ],
-            "requires": [],
-            "requirements": [
-              "Defeated Vardorvis during Desert Treasure II"
-            ]
-          },
-          {
-            "name": "Berserker ring (i)",
-            "itemIds": [
-              11773,
-              25264,
-              26770
-            ],
-            "requires": [],
-            "requirements": []
-          }
         ]
       },
       "equipmentReviewed": false,
       "requiredItems": [],
-      "inventory": [
-        {
-          "name": "Slayer helmet (i)",
-          "itemIds": [
-            11865,
-            19641,
-            19645,
-            19649,
-            21266,
-            21890,
-            23075,
-            24444,
-            25177,
-            25179,
-            25181,
-            25183,
-            25185,
-            25187,
-            25189,
-            25191,
-            25900,
-            25902,
-            25906,
-            25908,
-            25912,
-            25914,
-            26674,
-            26675,
-            26676,
-            26677,
-            26678,
-            26679,
-            26680,
-            26681,
-            26682,
-            26683,
-            26684,
-            29818,
-            29820,
-            29822,
-            33068,
-            33070,
-            33072,
-            33439,
-            33441,
-            33443,
-            33445,
-            33447,
-            33449
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Prayer potions",
-          "itemIds": [
-            143,
-            141,
-            139,
-            2434
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Seed box",
-          "itemIds": [
-            13639,
-            24482
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        }
-      ],
-      "switches": [
-        {
-          "name": "Dragon claws",
-          "itemIds": [
-            13652
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Saradomin godsword",
-          "itemIds": [
-            11806
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Voidwaker",
-          "itemIds": [
-            27690
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Burning claws",
-          "itemIds": [
-            29577
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Arkan blade",
-          "itemIds": [
-            30955
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Dragon dagger",
-          "itemIds": [
-            1215,
-            1231,
-            5680,
-            5698
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        }
-      ],
+      "inventory": [],
+      "switches": [],
       "xpRank": 2,
       "profitRank": 2,
       "effortRank": 2,
@@ -98775,23 +98130,15 @@
       "barrage": false,
       "group": false,
       "taskOnly": false,
-      "selectable": true,
-      "coverageStatus": "Current wiki equipment priorities linked by reviewed style/role context; full method prose coverage remains under audit",
+      "selectable": false,
+      "coverageStatus": "Procedural overview reviewed against wiki revision 15354865",
       "evidence": [
         {
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
+          "timestamp": "2026-09-24T01:12:46Z",
           "pageId": 630114,
-          "revisionId": 15333591,
-          "missing": false
-        },
-        {
-          "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
-          "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
-          "pageId": 630114,
-          "revisionId": 15333591,
+          "revisionId": 15354865,
           "missing": false
         }
       ]
@@ -98801,10 +98148,9 @@
       "name": "Melee Slash/Stab",
       "style": "MELEE",
       "role": "default",
-      "summary": "Use a slash weapon to cut the lure, then stab or strong melee weapons to benefit from the reduced stab Defence.",
+      "summary": "Use a slash attack to cut the lure, then stab or strong melee weapons to benefit from the reduced stab Defence.",
       "monsterIds": [
-        "aquanite",
-        "elder-aquanite"
+        "aquanite"
       ],
       "locationIds": [
         "aquanite-cavern-sailing"
@@ -98812,33 +98158,36 @@
       "requirements": [],
       "guidance": [
         "78 Slayer is required to kill Aquanites.",
-        "73 Sailing and a boat with an adamant keel or better are required to reach Ynysdail.",
-        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites.",
-        "70 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel.",
+        "73 Sailing is required to moor at Ynysdail; the first trip needs a boat with an adamant keel or better.",
+        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites; Mortimer assigns them without it.",
+        "50 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel (the Slayer task page states 70; the Rowboat amenity recipe states 50).",
         "Using the rowboat between Ynysdail and north of Gwenith requires Song of the Elves.",
         "Aquanites attack with Magic and have high accuracy.",
         "Protect from Magic is highly recommended against normal Aquanites.",
         "The cavern is single-way combat.",
         "A Dwarf multicannon cannot be placed because the ground is too damp.",
+        "Aquanites can be safespotted with a 9 or 10 tile attack range.",
         "A slash attack severs the Aquanite lure and reduces stab Defence by 50, from 60 to 10.",
-        "Damage is not required to sever the lure.",
-        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing.",
+        "Damage is not required to sever the lure, but the attack option must be set to slash.",
+        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing; a two-style weapon such as the Ghrazi rapier can swap between slash and stab instead.",
         "Voidwaker special attack does not sever the lure because it is Magic-based, but regular Voidwaker slash attacks can sever it.",
-        "Burning claws burn damage should only be used after the lure is severed, otherwise the burn is nulled when the lure is cut.",
-        "Elder aquanites can spawn after Bigger and Badder and have a 35-damage special if Protect from Magic has been active for some time.",
+        "Burning claws and Arkan blade burn damage should only be applied after the lure is severed, otherwise the burn is nulled when the lure is cut.",
+        "Elder aquanites spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); their special disables protection prayers and hits up to 50 if Protect from Magic has been active for some time.",
         "default task completion",
         "players with stab melee weapons",
         "lower Attack players who benefit from reducing stab Defence",
         "Start the kill with a slash attack to sever the lure.",
         "If using Voidwaker, use its regular slash attack to sever; its Magic-based special attack will not sever the lure.",
         "After severing, switch to the best stab or high-DPS melee weapon.",
-        "Use Burning claws only after severing the lure so burn damage is not nulled by the lure cut.",
-        "Use Saradomin godsword special attack for sustain if no other special attack weapon is brought.",
-        "If no dedicated slash switch is available, use a scimitar or Abyssal whip.",
+        "Apply Burning claws or Arkan blade burns only after severing the lure so the burn is not nulled by the lure cut.",
+        "Saradomin godsword special attack can sever the lure and restore Prayer points if no other special attack weapon is brought.",
+        "Oathplate chest and legs are listed first only when using a Soulreaper axe or Scythe of Vitur.",
+        "Blade of Saeldor, Voidwaker and Noxious halberd should be used on the stab attack style after severing.",
+        "If no dedicated slash switch is available, use a scimitar or Abyssal whip, or set a two-style weapon to slash.",
         "If no premium stab weapon is available, use the best available melee weapon after severing.",
         "Preparation prayer reference: Protect from Magic",
         "Preparation prayer reference: Piety",
-        "Key item or prerequisite: Saradomin godsword special attack"
+        "Key item or prerequisite: Stab melee weapon"
       ],
       "risks": [
         "Skipping the slash sever leaves much higher stab Defence and lowers accuracy.",
@@ -99382,9 +98731,57 @@
             "requirements": []
           },
           {
+            "name": "Rada's blessing 2",
+            "itemIds": [
+              22943
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
             "name": "Peaceful blessing",
             "itemIds": [
               20226
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Holy blessing",
+            "itemIds": [
+              20220
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Unholy blessing",
+            "itemIds": [
+              20223
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Honourable blessing",
+            "itemIds": [
+              20229
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "War blessing",
+            "itemIds": [
+              20232
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Ancient blessing",
+            "itemIds": [
+              20235
             ],
             "requires": [],
             "requirements": []
@@ -99505,134 +98902,48 @@
           }
         ]
       },
-      "equipmentReviewed": false,
+      "equipmentReviewed": true,
       "requiredItems": [],
       "inventory": [
         {
-          "name": "Abyssal whip or another fast 4-tick slash weapon",
-          "itemIds": [
-            4151
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Soulreaper axe",
-          "itemIds": [
-            28338
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Ghrazi rapier",
-          "itemIds": [
-            22324
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Osmumten's fang",
-          "itemIds": [
-            26219
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Blade of saeldor on stab",
-          "itemIds": [
-            23995
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Abyssal dagger",
-          "itemIds": [
-            13265,
-            13267,
-            13269,
-            13271
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Voidwaker",
-          "itemIds": [
-            27690
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Dragon claws",
-          "itemIds": [
-            13652
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Abyssal whip",
-          "itemIds": [
-            4151
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Divine super combat potions",
-          "itemIds": [
-            23694,
-            23691,
-            23688,
-            23685
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Prayer potions",
+          "name": "Prayer potion(4)",
           "itemIds": [
             143,
             141,
             139,
             2434
           ],
-          "quantity": 1,
+          "quantity": 14,
           "required": false,
           "stackable": false
         },
         {
-          "name": "Emergency food for Elder aquanites or Soulreaper axe use",
-          "itemIds": [],
-          "quantity": 1,
+          "name": "Divine super combat potion(4)",
+          "itemIds": [
+            23694,
+            23691,
+            23688,
+            23685
+          ],
+          "quantity": 4,
           "required": false,
           "stackable": false
         },
         {
           "name": "Bonecrusher",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
         },
         {
           "name": "Reagent pouch",
-          "itemIds": [],
+          "itemIds": [
+            29996,
+            29998
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -99657,14 +98968,17 @@
           "stackable": false
         },
         {
-          "name": "Rune pouch with Nature and Fire runes",
-          "itemIds": [],
+          "name": "Rune pouch",
+          "itemIds": [
+            12791,
+            24416
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
         },
         {
-          "name": "Teleport to house tablet",
+          "name": "Teleport to house (tablet)",
           "itemIds": [
             8013
           ],
@@ -99675,53 +98989,13 @@
       ],
       "switches": [
         {
-          "name": "Dragon claws",
+          "name": "Dragon claws or Saradomin godsword or Voidwaker or Burning claws or Arkan blade or Dragon dagger",
           "itemIds": [
-            13652
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Saradomin godsword",
-          "itemIds": [
-            11806
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Voidwaker",
-          "itemIds": [
-            27690
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Burning claws",
-          "itemIds": [
-            29577
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Arkan blade",
-          "itemIds": [
-            30955
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Dragon dagger",
-          "itemIds": [
+            13652,
+            11806,
+            27690,
+            29577,
+            30955,
             1215,
             1231,
             5680,
@@ -99732,57 +99006,12 @@
           "stackable": false
         },
         {
-          "name": "Dragon claws",
+          "name": "Abyssal whip or Abyssal tentacle or Dragon scimitar or Rune scimitar",
           "itemIds": [
-            13652
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Saradomin godsword",
-          "itemIds": [
-            11806
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Voidwaker",
-          "itemIds": [
-            27690
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Burning claws",
-          "itemIds": [
-            29577
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Arkan blade",
-          "itemIds": [
-            30955
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Dragon dagger",
-          "itemIds": [
-            1215,
-            1231,
-            5680,
-            5698
+            4151,
+            12006,
+            4587,
+            1333
           ],
           "quantity": 1,
           "required": false,
@@ -99798,22 +99027,901 @@
       "group": false,
       "taskOnly": false,
       "selectable": true,
+      "coverageStatus": "Melee Slash/Stab equipment, special attacks and inventory reviewed against wiki revision 15354865",
+      "evidence": [
+        {
+          "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
+          "title": "Slayer task/Aquanites",
+          "timestamp": "2026-09-24T01:12:46Z",
+          "pageId": 630114,
+          "revisionId": 15354865,
+          "missing": false
+        }
+      ]
+    },
+    "aquanite-ranged": {
+      "id": "aquanite-ranged",
+      "name": "Range",
+      "style": "RANGED",
+      "role": "alternative",
+      "summary": "Use Protect from Magic with the wiki Range setup: Toxic blowpipe or Twisted bow, then Bow of Faerdhinen, Zaryte crossbow or Crystal bow. Aquanites can also be safespotted with a 9 or 10 tile attack range.",
+      "monsterIds": [
+        "aquanite"
+      ],
+      "locationIds": [
+        "aquanite-cavern-sailing"
+      ],
+      "requirements": [],
+      "guidance": [
+        "78 Slayer is required to kill Aquanites.",
+        "73 Sailing is required to moor at Ynysdail; the first trip needs a boat with an adamant keel or better.",
+        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites; Mortimer assigns them without it.",
+        "50 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel (the Slayer task page states 70; the Rowboat amenity recipe states 50).",
+        "Using the rowboat between Ynysdail and north of Gwenith requires Song of the Elves.",
+        "Aquanites attack with Magic and have high accuracy.",
+        "Protect from Magic is highly recommended against normal Aquanites.",
+        "The cavern is single-way combat.",
+        "A Dwarf multicannon cannot be placed because the ground is too damp.",
+        "Aquanites can be safespotted with a 9 or 10 tile attack range.",
+        "A slash attack severs the Aquanite lure and reduces stab Defence by 50, from 60 to 10.",
+        "Damage is not required to sever the lure, but the attack option must be set to slash.",
+        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing; a two-style weapon such as the Ghrazi rapier can swap between slash and stab instead.",
+        "Voidwaker special attack does not sever the lure because it is Magic-based, but regular Voidwaker slash attacks can sever it.",
+        "Burning claws and Arkan blade burn damage should only be applied after the lure is severed, otherwise the burn is nulled when the lure is cut.",
+        "Elder aquanites spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); their special disables protection prayers and hits up to 50 if Protect from Magic has been active for some time.",
+        "players with stronger ranged than melee gear",
+        "safespotting with a 9 or 10 tile attack range",
+        "Keep Protect from Magic active against normal Aquanites.",
+        "Attack with the best available ranged weapon; the lure sever only lowers stab Defence, so no slash switch is needed.",
+        "Optionally attack from the wiki safespot tiles with a weapon that has a 9 or 10 tile attack range.",
+        "Flick Protect from Magic against Elder aquanites.",
+        "Optional: bring a rune pouch with runes for High Level Alchemy and Teleport to House.",
+        "Crystal helm, body and legs are listed only when using a Bow of Faerdhinen or Crystal bow.",
+        "A shield is only used with a one-handed weapon.",
+        "Preparation prayer reference: Protect from Magic",
+        "Preparation prayer reference: Rigour or Deadeye"
+      ],
+      "risks": [
+        "Aquanites have 100 ranged Defence, so ranged is generally slower than a severed-lure stab setup."
+      ],
+      "equipment": {
+        "HEAD": [
+          {
+            "name": "Slayer helmet (i)",
+            "itemIds": [
+              11865,
+              19641,
+              19645,
+              19649,
+              21266,
+              21890,
+              23075,
+              24444,
+              25177,
+              25179,
+              25181,
+              25183,
+              25185,
+              25187,
+              25189,
+              25191,
+              25900,
+              25902,
+              25906,
+              25908,
+              25912,
+              25914,
+              26674,
+              26675,
+              26676,
+              26677,
+              26678,
+              26679,
+              26680,
+              26681,
+              26682,
+              26683,
+              26684,
+              29818,
+              29820,
+              29822,
+              33068,
+              33070,
+              33072,
+              33439,
+              33441,
+              33443,
+              33445,
+              33447,
+              33449
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 10"
+            ]
+          },
+          {
+            "name": "Masori mask (f)",
+            "itemIds": [
+              27235
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 80",
+              "DEFENCE >= 80"
+            ]
+          },
+          {
+            "name": "Crystal helm",
+            "itemIds": [
+              23971
+            ],
+            "requires": [
+              [
+                25865,
+                23983,
+                24123
+              ]
+            ],
+            "requirements": [
+              "DEFENCE >= 70",
+              "AGILITY >= 50"
+            ]
+          },
+          {
+            "name": "Ancient coif",
+            "itemIds": [
+              12496
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 40",
+              "RANGED >= 70"
+            ]
+          }
+        ],
+        "AMULET": [
+          {
+            "name": "Necklace of rupture",
+            "itemIds": [
+              33639
+            ],
+            "requires": [],
+            "requirements": [
+              "HITPOINTS >= 90"
+            ]
+          },
+          {
+            "name": "Necklace of anguish",
+            "itemIds": [
+              19547
+            ],
+            "requires": [],
+            "requirements": [
+              "HITPOINTS >= 75"
+            ]
+          },
+          {
+            "name": "Amulet of fury",
+            "itemIds": [
+              6585
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Amulet of glory",
+            "itemIds": [
+              1706,
+              1708,
+              1710,
+              1712,
+              11976,
+              11978,
+              1704
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Bonecrusher necklace",
+            "itemIds": [
+              22986
+            ],
+            "requires": [],
+            "requirements": [
+              "PRAYER >= 70"
+            ]
+          }
+        ],
+        "CAPE": [
+          {
+            "name": "Dizana's quiver",
+            "itemIds": [
+              28951,
+              28953
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 75"
+            ]
+          },
+          {
+            "name": "Ava's assembler",
+            "itemIds": [
+              22109,
+              24222
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Ranging cape(t)",
+            "itemIds": [
+              9757
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 99"
+            ]
+          },
+          {
+            "name": "Ava's accumulator",
+            "itemIds": [
+              10499
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 50"
+            ]
+          }
+        ],
+        "BODY": [
+          {
+            "name": "Masori body (f)",
+            "itemIds": [
+              27238
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 80",
+              "DEFENCE >= 80"
+            ]
+          },
+          {
+            "name": "Crystal body",
+            "itemIds": [
+              23975
+            ],
+            "requires": [
+              [
+                25865,
+                23983,
+                24123
+              ]
+            ],
+            "requirements": [
+              "DEFENCE >= 70",
+              "AGILITY >= 50"
+            ]
+          },
+          {
+            "name": "Karil's leathertop",
+            "itemIds": [
+              4736,
+              4940,
+              4941,
+              4942,
+              4943
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 70",
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Saradomin d'hide body",
+            "itemIds": [
+              10386
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 40",
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Guthix d'hide body",
+            "itemIds": [
+              10378
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 40",
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Zamorak d'hide body",
+            "itemIds": [
+              10370
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 40",
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Armadyl d'hide body",
+            "itemIds": [
+              12508
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 40",
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Ancient d'hide body",
+            "itemIds": [
+              12492
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 40",
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Bandos d'hide body",
+            "itemIds": [
+              12500
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 40",
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Black d'hide body",
+            "itemIds": [
+              2503
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70",
+              "DEFENCE >= 40"
+            ]
+          }
+        ],
+        "LEGS": [
+          {
+            "name": "Masori chaps (f)",
+            "itemIds": [
+              27241
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 80",
+              "DEFENCE >= 80"
+            ]
+          },
+          {
+            "name": "Crystal legs",
+            "itemIds": [
+              23979
+            ],
+            "requires": [
+              [
+                25865,
+                23983,
+                24123
+              ]
+            ],
+            "requirements": [
+              "DEFENCE >= 70",
+              "AGILITY >= 50"
+            ]
+          },
+          {
+            "name": "Karil's leatherskirt",
+            "itemIds": [
+              4738,
+              4946,
+              4947,
+              4948,
+              4949
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 70",
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Saradomin chaps",
+            "itemIds": [
+              10388
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Guthix chaps",
+            "itemIds": [
+              10380
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Zamorak chaps",
+            "itemIds": [
+              10372
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Armadyl chaps",
+            "itemIds": [
+              12510
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Ancient chaps",
+            "itemIds": [
+              12494
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Bandos chaps",
+            "itemIds": [
+              12502
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Black d'hide chaps",
+            "itemIds": [
+              2497
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          }
+        ],
+        "WEAPON": [
+          {
+            "name": "Toxic blowpipe",
+            "itemIds": [
+              12926
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 75"
+            ]
+          },
+          {
+            "name": "Twisted bow",
+            "itemIds": [
+              20997
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 85"
+            ]
+          },
+          {
+            "name": "Bow of Faerdhinen",
+            "itemIds": [
+              25865
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 80",
+              "AGILITY >= 70"
+            ]
+          },
+          {
+            "name": "Zaryte crossbow",
+            "itemIds": [
+              26374
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 80"
+            ]
+          },
+          {
+            "name": "Crystal bow",
+            "itemIds": [
+              23983,
+              24123
+            ],
+            "requires": [],
+            "requirements": [
+              "Quest: Roving Elves",
+              "RANGED >= 70",
+              "AGILITY >= 50"
+            ]
+          }
+        ],
+        "SHIELD": [
+          {
+            "name": "Twisted buckler",
+            "itemIds": [
+              21000
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 75",
+              "DEFENCE >= 75"
+            ]
+          },
+          {
+            "name": "Dragonfire ward",
+            "itemIds": [
+              22002
+            ],
+            "requires": [],
+            "requirements": [
+              "Started Dragon Slayer I",
+              "RANGED >= 70",
+              "DEFENCE >= 75"
+            ]
+          },
+          {
+            "name": "Odium ward",
+            "itemIds": [
+              11926
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 60"
+            ]
+          },
+          {
+            "name": "Book of Law",
+            "itemIds": [
+              12610
+            ],
+            "requires": [],
+            "requirements": []
+          }
+        ],
+        "AMMO": [
+          {
+            "name": "Rada's blessing 4",
+            "itemIds": [
+              22947
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Seeking dragon arrow",
+            "itemIds": [
+              33595
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Ruby dragon bolts (e)",
+            "itemIds": [
+              21944
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Amethyst arrow",
+            "itemIds": [
+              21326,
+              21332,
+              21334,
+              21336
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Ruby bolts (e)",
+            "itemIds": [
+              9242
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 46"
+            ]
+          },
+          {
+            "name": "Holy blessing",
+            "itemIds": [
+              20220
+            ],
+            "requires": [],
+            "requirements": []
+          }
+        ],
+        "HANDS": [
+          {
+            "name": "Zaryte vambraces",
+            "itemIds": [
+              26235
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 80",
+              "DEFENCE >= 45"
+            ]
+          },
+          {
+            "name": "Barrows gloves",
+            "itemIds": [
+              7462
+            ],
+            "requires": [],
+            "requirements": []
+          },
+          {
+            "name": "Saradomin bracers",
+            "itemIds": [
+              10384
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Guthix bracers",
+            "itemIds": [
+              10376
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Zamorak bracers",
+            "itemIds": [
+              10368
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Armadyl bracers",
+            "itemIds": [
+              12506
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Ancient bracers",
+            "itemIds": [
+              12490
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Bandos bracers",
+            "itemIds": [
+              12498
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          },
+          {
+            "name": "Black d'hide vambraces",
+            "itemIds": [
+              2491
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 70"
+            ]
+          }
+        ],
+        "FEET": [
+          {
+            "name": "Avernic treads (max)",
+            "itemIds": [
+              31097
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 80",
+              "STRENGTH >= 80",
+              "RANGED >= 80",
+              "MAGIC >= 80"
+            ]
+          },
+          {
+            "name": "Pegasian boots",
+            "itemIds": [
+              13237
+            ],
+            "requires": [],
+            "requirements": [
+              "RANGED >= 75",
+              "DEFENCE >= 75"
+            ]
+          },
+          {
+            "name": "Ancient d'hide boots",
+            "itemIds": [
+              19921
+            ],
+            "requires": [],
+            "requirements": [
+              "DEFENCE >= 40",
+              "RANGED >= 70"
+            ]
+          }
+        ],
+        "RING": [
+          {
+            "name": "Venator ring",
+            "itemIds": [
+              28310
+            ],
+            "requires": [],
+            "requirements": [
+              "Defeated the Leviathan during Desert Treasure II"
+            ]
+          },
+          {
+            "name": "Archers ring (i)",
+            "itemIds": [
+              11771,
+              25260,
+              26768
+            ],
+            "requires": [],
+            "requirements": []
+          }
+        ]
+      },
+      "equipmentReviewed": false,
+      "requiredItems": [],
+      "inventory": [
+        {
+          "name": "Prayer potion(4)",
+          "itemIds": [
+            143,
+            141,
+            139,
+            2434
+          ],
+          "quantity": 14,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Divine ranging potion(4)",
+          "itemIds": [
+            23742,
+            23739,
+            23736,
+            23733
+          ],
+          "quantity": 6,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Bonecrusher",
+          "itemIds": [
+            13116
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Holy wrench",
+          "itemIds": [
+            6714
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Seed box",
+          "itemIds": [
+            13639,
+            24482
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Reagent pouch",
+          "itemIds": [
+            29996,
+            29998
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Rune pouch",
+          "itemIds": [
+            12791,
+            24416
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        }
+      ],
+      "switches": [],
+      "xpRank": 2,
+      "profitRank": 2,
+      "effortRank": 2,
+      "rankingReason": "Qualitative authored-method tier: area damage/speed for XP; explicit profit methods for profit; safespot/low-attention methods for effort. No measured XP or GP rates.",
+      "cannon": false,
+      "barrage": false,
+      "group": false,
+      "taskOnly": false,
+      "selectable": true,
       "coverageStatus": "Current wiki equipment priorities linked by reviewed style/role context; full method prose coverage remains under audit",
       "evidence": [
         {
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
+          "timestamp": "2026-09-24T01:12:46Z",
           "pageId": 630114,
-          "revisionId": 15333591,
+          "revisionId": 15354865,
           "missing": false
         },
         {
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
+          "timestamp": "2026-09-24T01:12:46Z",
           "pageId": 630114,
-          "revisionId": 15333591,
+          "revisionId": 15354865,
           "missing": false
         }
       ]
@@ -99823,7 +99931,7 @@
       "name": "Elder aquanite",
       "style": "MELEE",
       "role": "superior",
-      "summary": "Elder aquanites are superior spawns; flick Protect from Magic instead of leaving it on continuously to avoid their 35-damage special.",
+      "summary": "Elder aquanites are superior spawns; flick Protect from Magic instead of leaving it on continuously to avoid their prayer-disabling special, which hits up to 50.",
       "monsterIds": [
         "elder-aquanite"
       ],
@@ -99834,30 +99942,32 @@
       "guidance": [
         "Superior encounter guidance; this spawn cannot be selected as a repeatable task method.",
         "78 Slayer is required to kill Aquanites.",
-        "73 Sailing and a boat with an adamant keel or better are required to reach Ynysdail.",
-        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites.",
-        "70 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel.",
+        "73 Sailing is required to moor at Ynysdail; the first trip needs a boat with an adamant keel or better.",
+        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites; Mortimer assigns them without it.",
+        "50 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel (the Slayer task page states 70; the Rowboat amenity recipe states 50).",
         "Using the rowboat between Ynysdail and north of Gwenith requires Song of the Elves.",
         "Aquanites attack with Magic and have high accuracy.",
         "Protect from Magic is highly recommended against normal Aquanites.",
         "The cavern is single-way combat.",
         "A Dwarf multicannon cannot be placed because the ground is too damp.",
+        "Aquanites can be safespotted with a 9 or 10 tile attack range.",
         "A slash attack severs the Aquanite lure and reduces stab Defence by 50, from 60 to 10.",
-        "Damage is not required to sever the lure.",
-        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing.",
+        "Damage is not required to sever the lure, but the attack option must be set to slash.",
+        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing; a two-style weapon such as the Ghrazi rapier can swap between slash and stab instead.",
         "Voidwaker special attack does not sever the lure because it is Magic-based, but regular Voidwaker slash attacks can sever it.",
-        "Burning claws burn damage should only be used after the lure is severed, otherwise the burn is nulled when the lure is cut.",
-        "Elder aquanites can spawn after Bigger and Badder and have a 35-damage special if Protect from Magic has been active for some time.",
+        "Burning claws and Arkan blade burn damage should only be applied after the lure is severed, otherwise the burn is nulled when the lure is cut.",
+        "Elder aquanites spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); their special disables protection prayers and hits up to 50 if Protect from Magic has been active for some time.",
         "superior spawns after Bigger and Badder",
-        "Recognize the Elder aquanite superior spawn.",
+        "Recognize the Elder aquanite superior spawn (1/200 on task, 1/150 with the elite Combat Achievements).",
         "Do not leave Protect from Magic active continuously.",
-        "flick Protect from Magic on and off between the enemy's attacks.",
-        "Continue using the slash-to-stab melee approach.",
+        "Flick Protect from Magic on and off between the enemy's attacks.",
+        "Continue using the slash-to-stab melee approach; slash also severs the Elder aquanite's lure.",
         "Preparation prayer reference: Flick Protect from Magic between attacks",
         "Key item or prerequisite: Emergency food"
       ],
       "risks": [
-        "The special attack deals 35 damage if Protect from Magic has been active for some time."
+        "The special attack disables protection prayers and hits up to 50 if Protect from Magic has been active for some time.",
+        "Normal attacks can hit up to 34."
       ],
       "equipment": {
         "WEAPON": [
@@ -100019,9 +100129,9 @@
         {
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
+          "timestamp": "2026-09-24T01:12:46Z",
           "pageId": 630114,
-          "revisionId": 15333591,
+          "revisionId": 15354865,
           "missing": false
         }
       ]
@@ -100031,7 +100141,7 @@
       "name": "Getting to Ynysdail",
       "style": "MELEE",
       "role": "access",
-      "summary": "Reach Ynysdail by Sailing with an adamant keel or better, then build the rowboat hotspot for easier future access.",
+      "summary": "Reach Ynysdail by Sailing with an adamant keel or better, then build the rowboat hotspot for easier future access from north of Gwenith.",
       "monsterIds": [
         "aquanite",
         "elder-aquanite"
@@ -100042,29 +100152,31 @@
       "requirements": [],
       "guidance": [
         "78 Slayer is required to kill Aquanites.",
-        "73 Sailing and a boat with an adamant keel or better are required to reach Ynysdail.",
-        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites.",
-        "70 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel.",
+        "73 Sailing is required to moor at Ynysdail; the first trip needs a boat with an adamant keel or better.",
+        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites; Mortimer assigns them without it.",
+        "50 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel (the Slayer task page states 70; the Rowboat amenity recipe states 50).",
         "Using the rowboat between Ynysdail and north of Gwenith requires Song of the Elves.",
         "Aquanites attack with Magic and have high accuracy.",
         "Protect from Magic is highly recommended against normal Aquanites.",
         "The cavern is single-way combat.",
         "A Dwarf multicannon cannot be placed because the ground is too damp.",
+        "Aquanites can be safespotted with a 9 or 10 tile attack range.",
         "A slash attack severs the Aquanite lure and reduces stab Defence by 50, from 60 to 10.",
-        "Damage is not required to sever the lure.",
-        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing.",
+        "Damage is not required to sever the lure, but the attack option must be set to slash.",
+        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing; a two-style weapon such as the Ghrazi rapier can swap between slash and stab instead.",
         "Voidwaker special attack does not sever the lure because it is Magic-based, but regular Voidwaker slash attacks can sever it.",
-        "Burning claws burn damage should only be used after the lure is severed, otherwise the burn is nulled when the lure is cut.",
-        "Elder aquanites can spawn after Bigger and Badder and have a 35-damage special if Protect from Magic has been active for some time.",
+        "Burning claws and Arkan blade burn damage should only be applied after the lure is severed, otherwise the burn is nulled when the lure is cut.",
+        "Elder aquanites spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); their special disables protection prayers and hits up to 50 if Protect from Magic has been active for some time.",
         "first-time access",
         "return-trip setup",
-        "For first access, sail manually to Ynysdail with an adamant keel or better.",
+        "For first access, sail manually to Ynysdail with an adamant keel or better, entering through the green portal east of Lledrith Island.",
         "Build the rowboat hotspot on the island.",
-        "After building it, use rowboats between Ynysdail and north of Gwenith.",
+        "After building it, use rowboats between Ynysdail and north of Gwenith; teleport to Prifddinas and exit north to reach the mainland rowboat.",
         "Complete Song of the Elves to use the Gwenith-side rowboat route.",
+        "Enter Ynysdail Cavern from the island to reach the Aquanites.",
         "Key item or prerequisite: 73 Sailing",
         "Key item or prerequisite: Boat with adamant keel or better",
-        "Key item or prerequisite: 70 Construction",
+        "Key item or prerequisite: 50 Construction",
         "Key item or prerequisite: Hammer",
         "Key item or prerequisite: Saw",
         "Key item or prerequisite: 10 swamp paste",
@@ -100221,9 +100333,9 @@
         {
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
+          "timestamp": "2026-09-24T01:12:46Z",
           "pageId": 630114,
-          "revisionId": 15333591,
+          "revisionId": 15354865,
           "missing": false
         }
       ]
@@ -100244,409 +100356,24 @@
       "requirements": [],
       "guidance": [
         "78 Slayer is required to kill Aquanites.",
-        "73 Sailing and a boat with an adamant keel or better are required to reach Ynysdail.",
-        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites.",
-        "70 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel.",
+        "73 Sailing is required to moor at Ynysdail; the first trip needs a boat with an adamant keel or better.",
+        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites; Mortimer assigns them without it.",
+        "50 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel (the Slayer task page states 70; the Rowboat amenity recipe states 50).",
         "Using the rowboat between Ynysdail and north of Gwenith requires Song of the Elves.",
         "Aquanites attack with Magic and have high accuracy.",
         "Protect from Magic is highly recommended against normal Aquanites.",
         "The cavern is single-way combat.",
         "A Dwarf multicannon cannot be placed because the ground is too damp.",
+        "Aquanites can be safespotted with a 9 or 10 tile attack range.",
         "A slash attack severs the Aquanite lure and reduces stab Defence by 50, from 60 to 10.",
-        "Damage is not required to sever the lure.",
-        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing.",
+        "Damage is not required to sever the lure, but the attack option must be set to slash.",
+        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing; a two-style weapon such as the Ghrazi rapier can swap between slash and stab instead.",
         "Voidwaker special attack does not sever the lure because it is Magic-based, but regular Voidwaker slash attacks can sever it.",
-        "Burning claws burn damage should only be used after the lure is severed, otherwise the burn is nulled when the lure is cut.",
-        "Elder aquanites can spawn after Bigger and Badder and have a 35-damage special if Protect from Magic has been active for some time."
+        "Burning claws and Arkan blade burn damage should only be applied after the lure is severed, otherwise the burn is nulled when the lure is cut.",
+        "Elder aquanites spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); their special disables protection prayers and hits up to 50 if Protect from Magic has been active for some time."
       ],
       "risks": [],
       "equipment": {
-        "HEAD": [
-          {
-            "name": "Slayer helmet (i)",
-            "itemIds": [
-              11865,
-              19641,
-              19645,
-              19649,
-              21266,
-              21890,
-              23075,
-              24444,
-              25177,
-              25179,
-              25181,
-              25183,
-              25185,
-              25187,
-              25189,
-              25191,
-              25900,
-              25902,
-              25906,
-              25908,
-              25912,
-              25914,
-              26674,
-              26675,
-              26676,
-              26677,
-              26678,
-              26679,
-              26680,
-              26681,
-              26682,
-              26683,
-              26684,
-              29818,
-              29820,
-              29822,
-              33068,
-              33070,
-              33072,
-              33439,
-              33441,
-              33443,
-              33445,
-              33447,
-              33449
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 10"
-            ]
-          },
-          {
-            "name": "Torva full helm",
-            "itemIds": [
-              26382
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 80"
-            ]
-          },
-          {
-            "name": "Neitiznot faceguard",
-            "itemIds": [
-              24271
-            ],
-            "requires": [],
-            "requirements": [
-              "Quest: The Fremennik Exiles",
-              "DEFENCE >= 70"
-            ]
-          },
-          {
-            "name": "Oathplate helm",
-            "itemIds": [
-              30750
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 78"
-            ]
-          },
-          {
-            "name": "Serpentine helm",
-            "itemIds": [
-              12931
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 75"
-            ]
-          },
-          {
-            "name": "Blood moon helm",
-            "itemIds": [
-              29028,
-              29047
-            ],
-            "requires": [],
-            "requirements": [
-              "STRENGTH >= 75",
-              "DEFENCE >= 50"
-            ]
-          },
-          {
-            "name": "Helm of Neitiznot",
-            "itemIds": [
-              10828
-            ],
-            "requires": [],
-            "requirements": [
-              "Quest: The Fremennik Isles",
-              "DEFENCE >= 55"
-            ]
-          }
-        ],
-        "AMULET": [
-          {
-            "name": "Amulet of rancour",
-            "itemIds": [
-              29801
-            ],
-            "requires": [],
-            "requirements": [
-              "HITPOINTS >= 90"
-            ]
-          },
-          {
-            "name": "Amulet of torture",
-            "itemIds": [
-              19553
-            ],
-            "requires": [],
-            "requirements": [
-              "HITPOINTS >= 75"
-            ]
-          },
-          {
-            "name": "Amulet of fury",
-            "itemIds": [
-              6585
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Amulet of glory",
-            "itemIds": [
-              1706,
-              1708,
-              1710,
-              1712,
-              11976,
-              11978,
-              1704
-            ],
-            "requires": [],
-            "requirements": []
-          }
-        ],
-        "CAPE": [
-          {
-            "name": "Infernal cape",
-            "itemIds": [
-              21295,
-              24224
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Fire cape",
-            "itemIds": [
-              6570,
-              24223
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Ardougne cloak 4",
-            "itemIds": [
-              13124
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Ardougne cloak 3",
-            "itemIds": [
-              13123
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Ardougne cloak 2",
-            "itemIds": [
-              13122
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Ardougne cloak 1",
-            "itemIds": [
-              13121
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Mixed hide cape",
-            "itemIds": [
-              29289
-            ],
-            "requires": [],
-            "requirements": [
-              "RANGED >= 60",
-              "DEFENCE >= 50"
-            ]
-          }
-        ],
-        "BODY": [
-          {
-            "name": "Oathplate chest",
-            "itemIds": [
-              30753
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 78"
-            ]
-          },
-          {
-            "name": "Torva platebody",
-            "itemIds": [
-              26384
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 80"
-            ]
-          },
-          {
-            "name": "Bandos chestplate",
-            "itemIds": [
-              11832
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 65"
-            ]
-          },
-          {
-            "name": "Blood moon chestplate",
-            "itemIds": [
-              29022,
-              29043
-            ],
-            "requires": [],
-            "requirements": [
-              "STRENGTH >= 75",
-              "DEFENCE >= 50"
-            ]
-          },
-          {
-            "name": "Fighter torso",
-            "itemIds": [
-              10551,
-              24175,
-              28067,
-              28069
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 40"
-            ]
-          },
-          {
-            "name": "Sunfire fanatic cuirass",
-            "itemIds": [
-              28936
-            ],
-            "requires": [],
-            "requirements": [
-              "PRAYER >= 60",
-              "DEFENCE >= 40"
-            ]
-          },
-          {
-            "name": "Proselyte hauberk",
-            "itemIds": [
-              9674
-            ],
-            "requires": [],
-            "requirements": [
-              "Quest: The Slug Menace",
-              "DEFENCE >= 30",
-              "PRAYER >= 20"
-            ]
-          }
-        ],
-        "LEGS": [
-          {
-            "name": "Oathplate legs",
-            "itemIds": [
-              30756
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 78"
-            ]
-          },
-          {
-            "name": "Torva platelegs",
-            "itemIds": [
-              26386
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 80"
-            ]
-          },
-          {
-            "name": "Bandos tassets",
-            "itemIds": [
-              11834
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 65"
-            ]
-          },
-          {
-            "name": "Blood moon tassets",
-            "itemIds": [
-              29025,
-              29045
-            ],
-            "requires": [],
-            "requirements": [
-              "STRENGTH >= 75",
-              "DEFENCE >= 50"
-            ]
-          },
-          {
-            "name": "Sunfire fanatic chausses",
-            "itemIds": [
-              28939
-            ],
-            "requires": [],
-            "requirements": [
-              "PRAYER >= 60",
-              "DEFENCE >= 40"
-            ]
-          },
-          {
-            "name": "Proselyte cuisse",
-            "itemIds": [
-              9676
-            ],
-            "requires": [],
-            "requirements": [
-              "Quest: The Slug Menace",
-              "DEFENCE >= 30",
-              "PRAYER >= 20"
-            ]
-          },
-          {
-            "name": "Proselyte tasset",
-            "itemIds": [
-              9678
-            ],
-            "requires": [],
-            "requirements": [
-              "Quest: The Slug Menace",
-              "DEFENCE >= 30",
-              "PRAYER >= 20"
-            ]
-          }
-        ],
         "WEAPON": [
           {
             "name": "Soulreaper axe",
@@ -100754,234 +100481,12 @@
               "ATTACK >= 65"
             ]
           }
-        ],
-        "SHIELD": [
-          {
-            "name": "Avernic defender",
-            "itemIds": [
-              22322,
-              24186
-            ],
-            "requires": [],
-            "requirements": [
-              "ATTACK >= 70",
-              "DEFENCE >= 70"
-            ]
-          },
-          {
-            "name": "Dragon defender",
-            "itemIds": [
-              12954,
-              24143
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 60"
-            ]
-          }
-        ],
-        "AMMO": [
-          {
-            "name": "Rada's blessing 4",
-            "itemIds": [
-              22947
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Rada's blessing 3",
-            "itemIds": [
-              22945
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Peaceful blessing",
-            "itemIds": [
-              20226
-            ],
-            "requires": [],
-            "requirements": []
-          }
-        ],
-        "HANDS": [
-          {
-            "name": "Ferocious gloves",
-            "itemIds": [
-              22981
-            ],
-            "requires": [],
-            "requirements": [
-              "ATTACK >= 80",
-              "DEFENCE >= 80"
-            ]
-          },
-          {
-            "name": "Bracelet of slaughter",
-            "itemIds": [
-              21183
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Barrows gloves",
-            "itemIds": [
-              7462
-            ],
-            "requires": [],
-            "requirements": []
-          }
-        ],
-        "FEET": [
-          {
-            "name": "Avernic treads (max)",
-            "itemIds": [
-              31097
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 80",
-              "STRENGTH >= 80",
-              "RANGED >= 80",
-              "MAGIC >= 80"
-            ]
-          },
-          {
-            "name": "Primordial boots",
-            "itemIds": [
-              13239
-            ],
-            "requires": [],
-            "requirements": [
-              "STRENGTH >= 75",
-              "DEFENCE >= 75"
-            ]
-          },
-          {
-            "name": "Dragon boots",
-            "itemIds": [
-              11840
-            ],
-            "requires": [],
-            "requirements": [
-              "DEFENCE >= 60"
-            ]
-          },
-          {
-            "name": "Aranea boots",
-            "itemIds": [
-              29806
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Spiked manacles",
-            "itemIds": [
-              23389
-            ],
-            "requires": [],
-            "requirements": []
-          },
-          {
-            "name": "Mixed hide boots",
-            "itemIds": [
-              29286
-            ],
-            "requires": [],
-            "requirements": [
-              "RANGED >= 60",
-              "DEFENCE >= 50"
-            ]
-          }
-        ],
-        "RING": [
-          {
-            "name": "Ultor ring",
-            "itemIds": [
-              28307
-            ],
-            "requires": [],
-            "requirements": [
-              "Defeated Vardorvis during Desert Treasure II"
-            ]
-          },
-          {
-            "name": "Berserker ring (i)",
-            "itemIds": [
-              11773,
-              25264,
-              26770
-            ],
-            "requires": [],
-            "requirements": []
-          }
         ]
       },
       "equipmentReviewed": false,
       "requiredItems": [],
       "inventory": [],
       "switches": [
-        {
-          "name": "Dragon claws",
-          "itemIds": [
-            13652
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Saradomin godsword",
-          "itemIds": [
-            11806
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Voidwaker",
-          "itemIds": [
-            27690
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Burning claws",
-          "itemIds": [
-            29577
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Arkan blade",
-          "itemIds": [
-            30955
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
-        {
-          "name": "Dragon dagger",
-          "itemIds": [
-            1215,
-            1231,
-            5680,
-            5698
-          ],
-          "quantity": 1,
-          "required": false,
-          "stackable": false
-        },
         {
           "name": "Dragon claws",
           "itemIds": [
@@ -101048,23 +100553,15 @@
       "barrage": false,
       "group": false,
       "taskOnly": false,
-      "selectable": true,
-      "coverageStatus": "Current wiki equipment priorities linked by reviewed style/role context; full method prose coverage remains under audit",
+      "selectable": false,
+      "coverageStatus": "Equipment reference; the selectable melee setup is Melee Slash/Stab",
       "evidence": [
         {
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
+          "timestamp": "2026-09-24T01:12:46Z",
           "pageId": 630114,
-          "revisionId": 15333591,
-          "missing": false
-        },
-        {
-          "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
-          "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
-          "pageId": 630114,
-          "revisionId": 15333591,
+          "revisionId": 15354865,
           "missing": false
         }
       ]
@@ -101085,20 +100582,21 @@
       "requirements": [],
       "guidance": [
         "78 Slayer is required to kill Aquanites.",
-        "73 Sailing and a boat with an adamant keel or better are required to reach Ynysdail.",
-        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites.",
-        "70 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel.",
+        "73 Sailing is required to moor at Ynysdail; the first trip needs a boat with an adamant keel or better.",
+        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites; Mortimer assigns them without it.",
+        "50 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel (the Slayer task page states 70; the Rowboat amenity recipe states 50).",
         "Using the rowboat between Ynysdail and north of Gwenith requires Song of the Elves.",
         "Aquanites attack with Magic and have high accuracy.",
         "Protect from Magic is highly recommended against normal Aquanites.",
         "The cavern is single-way combat.",
         "A Dwarf multicannon cannot be placed because the ground is too damp.",
+        "Aquanites can be safespotted with a 9 or 10 tile attack range.",
         "A slash attack severs the Aquanite lure and reduces stab Defence by 50, from 60 to 10.",
-        "Damage is not required to sever the lure.",
-        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing.",
+        "Damage is not required to sever the lure, but the attack option must be set to slash.",
+        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing; a two-style weapon such as the Ghrazi rapier can swap between slash and stab instead.",
         "Voidwaker special attack does not sever the lure because it is Magic-based, but regular Voidwaker slash attacks can sever it.",
-        "Burning claws burn damage should only be used after the lure is severed, otherwise the burn is nulled when the lure is cut.",
-        "Elder aquanites can spawn after Bigger and Badder and have a 35-damage special if Protect from Magic has been active for some time."
+        "Burning claws and Arkan blade burn damage should only be applied after the lure is severed, otherwise the burn is nulled when the lure is cut.",
+        "Elder aquanites spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); their special disables protection prayers and hits up to 50 if Protect from Magic has been active for some time."
       ],
       "risks": [],
       "equipment": {
@@ -101838,9 +101336,9 @@
         {
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
+          "timestamp": "2026-09-24T01:12:46Z",
           "pageId": 630114,
-          "revisionId": 15333591,
+          "revisionId": 15354865,
           "missing": false
         }
       ]
@@ -101861,20 +101359,21 @@
       "requirements": [],
       "guidance": [
         "78 Slayer is required to kill Aquanites.",
-        "73 Sailing and a boat with an adamant keel or better are required to reach Ynysdail.",
-        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites.",
-        "70 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel.",
+        "73 Sailing is required to moor at Ynysdail; the first trip needs a boat with an adamant keel or better.",
+        "The Lured In Slayer reward unlock is required before Nieve or Duradel can assign Aquanites; Mortimer assigns them without it.",
+        "50 Construction plus hammer, saw, 10 swamp paste, and 8 camphor planks are required to construct the Ynysdail rowboat for later travel (the Slayer task page states 70; the Rowboat amenity recipe states 50).",
         "Using the rowboat between Ynysdail and north of Gwenith requires Song of the Elves.",
         "Aquanites attack with Magic and have high accuracy.",
         "Protect from Magic is highly recommended against normal Aquanites.",
         "The cavern is single-way combat.",
         "A Dwarf multicannon cannot be placed because the ground is too damp.",
+        "Aquanites can be safespotted with a 9 or 10 tile attack range.",
         "A slash attack severs the Aquanite lure and reduces stab Defence by 50, from 60 to 10.",
-        "Damage is not required to sever the lure.",
-        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing.",
+        "Damage is not required to sever the lure, but the attack option must be set to slash.",
+        "A fast 4-tick slash weapon such as a scimitar or Abyssal whip is recommended for severing; a two-style weapon such as the Ghrazi rapier can swap between slash and stab instead.",
         "Voidwaker special attack does not sever the lure because it is Magic-based, but regular Voidwaker slash attacks can sever it.",
-        "Burning claws burn damage should only be used after the lure is severed, otherwise the burn is nulled when the lure is cut.",
-        "Elder aquanites can spawn after Bigger and Badder and have a 35-damage special if Protect from Magic has been active for some time."
+        "Burning claws and Arkan blade burn damage should only be applied after the lure is severed, otherwise the burn is nulled when the lure is cut.",
+        "Elder aquanites spawn at 1/200 on task after Bigger and Badder (1/150 with the elite Combat Achievements); their special disables protection prayers and hits up to 50 if Protect from Magic has been active for some time."
       ],
       "risks": [],
       "equipment": {
@@ -102631,9 +102130,9 @@
         {
           "url": "https://oldschool.runescape.wiki/w/Slayer_task/Aquanites",
           "title": "Slayer task/Aquanites",
-          "timestamp": "2026-09-08T01:38:06Z",
+          "timestamp": "2026-09-24T01:12:46Z",
           "pageId": 630114,
-          "revisionId": 15333591,
+          "revisionId": 15354865,
           "missing": false
         }
       ]
@@ -213619,7 +213118,6 @@
         "Use Bonecrusher or bonecrusher necklace where available to help sustain prayer from big bones.",
         "Preparation prayer reference: Protect from Melee",
         "Key item or prerequisite: Proselyte armour or other Prayer-bonus gear",
-        "Key item or prerequisite: Bonecrusher",
         "Key item or prerequisite: Soul bearer",
         "Key item or prerequisite: Light source",
         "Equipment priorities use the Wiki's general Slayer training melee table because this source has no dedicated equipment grid."
@@ -214783,6 +214281,15 @@
             141,
             139,
             2434
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Bonecrusher",
+          "itemIds": [
+            13116
           ],
           "quantity": 1,
           "required": false,
@@ -257374,6 +256881,7 @@
         {
           "name": "Bonecrusher or bonecrusher necklace",
           "itemIds": [
+            13116,
             22986
           ],
           "quantity": 1,
@@ -257477,7 +256985,9 @@
         },
         {
           "name": "Bonecrusher",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -258651,7 +258161,9 @@
         },
         {
           "name": "Bonecrusher",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -259688,6 +259200,7 @@
         {
           "name": "Bonecrusher or bonecrusher necklace",
           "itemIds": [
+            13116,
             22986
           ],
           "quantity": 1,
@@ -259760,7 +259273,9 @@
         },
         {
           "name": "Bonecrusher",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -311065,7 +310580,9 @@
         },
         {
           "name": "Bonecrusher if not using bonecrusher necklace",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -335849,7 +335366,8 @@
         {
           "name": "Bonecrusher necklace or bonecrusher",
           "itemIds": [
-            22986
+            22986,
+            13116
           ],
           "quantity": 1,
           "required": false,
@@ -336113,7 +335631,9 @@
         },
         {
           "name": "Bonecrusher if not collecting bones",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -336325,7 +335845,9 @@
         },
         {
           "name": "Bonecrusher",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -342548,7 +342070,9 @@
         },
         {
           "name": "Bonecrusher",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -344528,7 +344052,6 @@
         "The task page notes that Tormented bracelet damage is often less useful than bracelet of slaughter because extending Dust devil tasks is valuable experience.",
         "Kodai wand is especially effective because of its magic damage bonus, infinite water runes, and rune-saving effect.",
         "Key item or prerequisite: Gem bag",
-        "Key item or prerequisite: Bonecrusher",
         "Key item or prerequisite: Teleport to house",
         "Spell preparation baseline: Ice Burst; rune quantities cover 500 casts before rune-saving or infinite-rune equipment. Higher spells in the guidance require their own level and runes."
       ],
@@ -344666,6 +344189,15 @@
           "stackable": false
         },
         {
+          "name": "Bonecrusher",
+          "itemIds": [
+            13116
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
           "name": "Rune pouch with water, blood, and death runes for Ancient Magicks",
           "itemIds": [],
           "quantity": 1,
@@ -344714,7 +344246,9 @@
         },
         {
           "name": "Bonecrusher",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -357412,7 +356946,14 @@
         },
         {
           "name": "Teleport crystal or other Prifddinas access",
-          "itemIds": [],
+          "itemIds": [
+            6102,
+            6101,
+            6100,
+            6099,
+            13102,
+            23946
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -357566,7 +357107,6 @@
         "Key item or prerequisite: Song of the Elves",
         "Key item or prerequisite: Melee weapon",
         "Key item or prerequisite: Prayer gear",
-        "Key item or prerequisite: Teleport crystal",
         "Equipment priorities use the Wiki's general Slayer training melee table because this source has no dedicated equipment grid."
       ],
       "risks": [],
@@ -358750,7 +358290,22 @@
       },
       "equipmentReviewed": false,
       "requiredItems": [],
-      "inventory": [],
+      "inventory": [
+        {
+          "name": "Teleport crystal",
+          "itemIds": [
+            6102,
+            6101,
+            6100,
+            6099,
+            13102,
+            23946
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        }
+      ],
       "switches": [
         {
           "name": "Dragon claws",
@@ -365020,7 +364575,6 @@
         "Bring Ranged or Magic gear when using safespots instead of melee.",
         "Keep crystal shard and enhanced crystal teleport seed drops from Prifddinas and Iorwerth Dungeon options.",
         "The task page recommends skipping elf tasks when possible because the assignment has lower weight from higher-level masters and the enhanced seed is rare.",
-        "Key item or prerequisite: Teleport crystal",
         "Key item or prerequisite: Iorwerth camp teleport",
         "Key item or prerequisite: High alchemy runes",
         "Key item or prerequisite: Dwarf multicannon"
@@ -365118,6 +364672,20 @@
           "stackable": false
         },
         {
+          "name": "Teleport crystal",
+          "itemIds": [
+            6102,
+            6101,
+            6100,
+            6099,
+            13102,
+            23946
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
           "name": "Slayer ring",
           "itemIds": [
             11873,
@@ -365158,7 +364726,14 @@
         },
         {
           "name": "Teleport crystal for Lletya or Prifddinas",
-          "itemIds": [],
+          "itemIds": [
+            6102,
+            6101,
+            6100,
+            6099,
+            13102,
+            23946
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -379094,7 +378669,6 @@
         "Preparation prayer reference: Piety",
         "Key item or prerequisite: Strong melee weapon",
         "Key item or prerequisite: Prayer gear",
-        "Key item or prerequisite: Bonecrusher",
         "Key item or prerequisite: Kourend Castle or Xeric teleport",
         "Equipment priorities use the Wiki's general Slayer training melee table because this source has no dedicated equipment grid."
       ],
@@ -380281,7 +379855,17 @@
       },
       "equipmentReviewed": false,
       "requiredItems": [],
-      "inventory": [],
+      "inventory": [
+        {
+          "name": "Bonecrusher",
+          "itemIds": [
+            13116
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        }
+      ],
       "switches": [
         {
           "name": "Dragon claws",
@@ -384434,7 +384018,6 @@
         "Fire giants are frequently killed by Ironman players early because of the rune scimitar drop.",
         "Key item or prerequisite: Dwarf multicannon",
         "Key item or prerequisite: Food",
-        "Key item or prerequisite: Bonecrusher",
         "Key item or prerequisite: High alchemy runes",
         "Key item or prerequisite: Location access items"
       ],
@@ -384533,6 +384116,15 @@
             141,
             139,
             2434
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Bonecrusher",
+          "itemIds": [
+            13116
           ],
           "quantity": 1,
           "required": false,
@@ -419380,8 +418972,7 @@
         "The task page lists Herb sack, Seed box, Rune pouch, and Bonecrusher as optional inventory support.",
         "Key item or prerequisite: Anti-icy-breath shield",
         "Key item or prerequisite: Imbued heart",
-        "Key item or prerequisite: Food",
-        "Key item or prerequisite: Bonecrusher"
+        "Key item or prerequisite: Food"
       ],
       "risks": [],
       "equipment": {
@@ -419520,6 +419111,15 @@
           "stackable": false
         },
         {
+          "name": "Bonecrusher",
+          "itemIds": [
+            13116
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
           "name": "Anti-icy-breath shield: elemental, mind, dragonfire shield, dragonfire ward, or ancient wyvern shield",
           "itemIds": [
             21633
@@ -419585,7 +419185,9 @@
         },
         {
           "name": "Bonecrusher if not selling wyvern bones",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -504879,6 +504481,7 @@
         {
           "name": "Bonecrusher or ash sanctifier if desired",
           "itemIds": [
+            13116,
             25781
           ],
           "quantity": 1,
@@ -728041,7 +727644,6 @@
         "Preparation prayer reference: Protect from Missiles when tanking Ancient Zygomites",
         "Preparation prayer reference: Protect from Melee if fighting regular Zygomites instead",
         "Key item or prerequisite: Dragonhide armour or Karil's armour",
-        "Key item or prerequisite: Reagent pouch",
         "Key item or prerequisite: Ranged or Magic weapon for safespotting",
         "Equipment priorities use the Wiki's general Slayer training melee table because this source has no dedicated equipment grid."
       ],
@@ -729198,6 +728800,16 @@
           "name": "Fungicide",
           "itemIds": [
             7432
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Reagent pouch",
+          "itemIds": [
+            29996,
+            29998
           ],
           "quantity": 1,
           "required": false,
@@ -736662,7 +736274,6 @@
         "Collect crystal shards from Greater Nechryael killed in Iorwerth Dungeon.",
         "The task page recommends Iorwerth Dungeon for non-magic Greater Nechryael because Catacombs melee is likely to be crashed.",
         "Key item or prerequisite: Song of the Elves",
-        "Key item or prerequisite: Teleport crystal",
         "Key item or prerequisite: Dwarf multicannon"
       ],
       "risks": [],
@@ -736738,6 +736349,20 @@
       "equipmentReviewed": false,
       "requiredItems": [],
       "inventory": [
+        {
+          "name": "Teleport crystal",
+          "itemIds": [
+            6102,
+            6101,
+            6100,
+            6099,
+            13102,
+            23946
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
         {
           "name": "Emberlight",
           "itemIds": [
@@ -844435,8 +844060,7 @@
         "Remember the unique drops are granite legs and draconic visage, not wyvern visage.",
         "The strategy page examples show both combat-trip inventories and loot-focused inventories for Ranged and Magic safespotting.",
         "Key item or prerequisite: Ranging potion, super combat potion, or imbued heart depending on style",
-        "Key item or prerequisite: Food",
-        "Key item or prerequisite: Bonecrusher"
+        "Key item or prerequisite: Food"
       ],
       "risks": [],
       "equipment": {
@@ -844560,6 +844184,15 @@
           "stackable": false
         },
         {
+          "name": "Bonecrusher",
+          "itemIds": [
+            13116
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
           "name": "Protective shield even when using an offensive shield after safespotting",
           "itemIds": [],
           "quantity": 1,
@@ -844614,7 +844247,9 @@
         },
         {
           "name": "Bonecrusher for Wyvern bones if prayer experience or inventory management is desired",
-          "itemIds": [],
+          "itemIds": [
+            13116
+          ],
           "quantity": 1,
           "required": false,
           "stackable": false
@@ -894785,7 +894420,8 @@
         {
           "name": "Bonecrusher necklace or bonecrusher",
           "itemIds": [
-            22986
+            22986,
+            13116
           ],
           "quantity": 1,
           "required": false,
@@ -895718,7 +895354,8 @@
         {
           "name": "Bonecrusher necklace or bonecrusher",
           "itemIds": [
-            22986
+            22986,
+            13116
           ],
           "quantity": 1,
           "required": false,
@@ -895816,7 +895453,8 @@
         {
           "name": "Bonecrusher necklace or bonecrusher",
           "itemIds": [
-            22986
+            22986,
+            13116
           ],
           "quantity": 1,
           "required": false,
@@ -896699,7 +896337,8 @@
         {
           "name": "Bonecrusher necklace or bonecrusher",
           "itemIds": [
-            22986
+            22986,
+            13116
           ],
           "quantity": 1,
           "required": false,
@@ -898228,7 +897867,8 @@
         {
           "name": "Bonecrusher necklace or bonecrusher",
           "itemIds": [
-            22986
+            22986,
+            13116
           ],
           "quantity": 1,
           "required": false,
@@ -923231,7 +922871,8 @@
         {
           "name": "Bonecrusher necklace or bonecrusher",
           "itemIds": [
-            22986
+            22986,
+            13116
           ],
           "quantity": 1,
           "required": false,
@@ -928314,7 +927955,6 @@
         "Bring Soul bearer if banking ensouled heads instead of reanimating them during the task.",
         "Set High Alchemy warning value high enough to avoid accidental low-value alchs during cannon trips.",
         "Keep a one-click teleport for bad lure, low prayer, or ice troll damage spikes.",
-        "Key item or prerequisite: Bonecrusher",
         "Key item or prerequisite: Soul bearer",
         "Key item or prerequisite: Runes for High Alchemy",
         "Key item or prerequisite: Runes for Sinister Offering",
@@ -928429,6 +928069,15 @@
           "name": "Bonecrusher necklace",
           "itemIds": [
             22986
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Bonecrusher",
+          "itemIds": [
+            13116
           ],
           "quantity": 1,
           "required": false,
@@ -1012242,7 +1011891,6 @@
         "Bring High Level Alchemy runes because Waterfiends commonly drop armour and staves.",
         "Key item or prerequisite: Ancient Cavern access",
         "Key item or prerequisite: Fairy ring AKQ for Kraken Cove",
-        "Key item or prerequisite: Teleport crystal for Iorwerth Dungeon",
         "Key item or prerequisite: High Level Alchemy runes",
         "Key item or prerequisite: One-click teleport"
       ],
@@ -1012369,6 +1012017,20 @@
             3857,
             3855,
             3853
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
+        {
+          "name": "Teleport crystal for Iorwerth Dungeon",
+          "itemIds": [
+            6102,
+            6101,
+            6100,
+            6099,
+            13102,
+            23946
           ],
           "quantity": 1,
           "required": false,
@@ -1014917,7 +1014579,6 @@
         "Account for crystal shard drops when comparing profit to Ancient Cavern or Kraken Cove.",
         "Waterfiends in Iorwerth Dungeon can drop crystal shards, slightly increasing profit.",
         "Key item or prerequisite: Song of the Elves",
-        "Key item or prerequisite: Teleport crystal",
         "Key item or prerequisite: Dwarf multicannon",
         "Key item or prerequisite: Crush melee weapon",
         "Key item or prerequisite: Magic Defence armour"
@@ -1015083,6 +1014744,20 @@
         }
       ],
       "inventory": [
+        {
+          "name": "Teleport crystal",
+          "itemIds": [
+            6102,
+            6101,
+            6100,
+            6099,
+            13102,
+            23946
+          ],
+          "quantity": 1,
+          "required": false,
+          "stackable": false
+        },
         {
           "name": "Cannonballs",
           "itemIds": [
@@ -1081296,9 +1080971,108 @@
       "requirementsKnown": false,
       "combatBonus": "NONE"
     },
+    "13116": {
+      "id": 13116,
+      "name": "Bonecrusher",
+      "slot": "",
+      "style": "ANY",
+      "levels": {},
+      "requirements": [],
+      "usable": true,
+      "requirementsKnown": false,
+      "combatBonus": "NONE"
+    },
     "3292": {
       "id": 3292,
       "name": "Falador teleport",
+      "slot": "",
+      "style": "ANY",
+      "levels": {},
+      "requirements": [],
+      "usable": true,
+      "requirementsKnown": false,
+      "combatBonus": "NONE"
+    },
+    "29996": {
+      "id": 29996,
+      "name": "Reagent pouch",
+      "slot": "",
+      "style": "ANY",
+      "levels": {},
+      "requirements": [],
+      "usable": true,
+      "requirementsKnown": false,
+      "combatBonus": "NONE"
+    },
+    "29998": {
+      "id": 29998,
+      "name": "Reagent pouch",
+      "slot": "",
+      "style": "ANY",
+      "levels": {},
+      "requirements": [],
+      "usable": true,
+      "requirementsKnown": false,
+      "combatBonus": "NONE"
+    },
+    "6102": {
+      "id": 6102,
+      "name": "Teleport crystal",
+      "slot": "",
+      "style": "ANY",
+      "levels": {},
+      "requirements": [],
+      "usable": true,
+      "requirementsKnown": false,
+      "combatBonus": "NONE"
+    },
+    "6101": {
+      "id": 6101,
+      "name": "Teleport crystal",
+      "slot": "",
+      "style": "ANY",
+      "levels": {},
+      "requirements": [],
+      "usable": true,
+      "requirementsKnown": false,
+      "combatBonus": "NONE"
+    },
+    "6100": {
+      "id": 6100,
+      "name": "Teleport crystal",
+      "slot": "",
+      "style": "ANY",
+      "levels": {},
+      "requirements": [],
+      "usable": true,
+      "requirementsKnown": false,
+      "combatBonus": "NONE"
+    },
+    "6099": {
+      "id": 6099,
+      "name": "Teleport crystal",
+      "slot": "",
+      "style": "ANY",
+      "levels": {},
+      "requirements": [],
+      "usable": true,
+      "requirementsKnown": false,
+      "combatBonus": "NONE"
+    },
+    "13102": {
+      "id": 13102,
+      "name": "Teleport crystal",
+      "slot": "",
+      "style": "ANY",
+      "levels": {},
+      "requirements": [],
+      "usable": true,
+      "requirementsKnown": false,
+      "combatBonus": "NONE"
+    },
+    "23946": {
+      "id": 23946,
+      "name": "Teleport crystal",
       "slot": "",
       "style": "ANY",
       "levels": {},
@@ -1081580,56 +1081354,6 @@
     "26950": {
       "id": 26950,
       "name": "Pharaoh's sceptre",
-      "slot": "",
-      "levels": {},
-      "requirements": [],
-      "usable": true,
-      "requirementsKnown": false,
-      "combatBonus": "NONE"
-    },
-    "6102": {
-      "id": 6102,
-      "name": "Teleport crystal (1)",
-      "slot": "",
-      "levels": {},
-      "requirements": [],
-      "usable": true,
-      "requirementsKnown": false,
-      "combatBonus": "NONE"
-    },
-    "6101": {
-      "id": 6101,
-      "name": "Teleport crystal (2)",
-      "slot": "",
-      "levels": {},
-      "requirements": [],
-      "usable": true,
-      "requirementsKnown": false,
-      "combatBonus": "NONE"
-    },
-    "6100": {
-      "id": 6100,
-      "name": "Teleport crystal (3)",
-      "slot": "",
-      "levels": {},
-      "requirements": [],
-      "usable": true,
-      "requirementsKnown": false,
-      "combatBonus": "NONE"
-    },
-    "6099": {
-      "id": 6099,
-      "name": "Teleport crystal (4)",
-      "slot": "",
-      "levels": {},
-      "requirements": [],
-      "usable": true,
-      "requirementsKnown": false,
-      "combatBonus": "NONE"
-    },
-    "13102": {
-      "id": 13102,
-      "name": "Teleport crystal (5)",
       "slot": "",
       "levels": {},
       "requirements": [],
@@ -1107425,109 +1107149,34 @@
         "aquanite"
       ],
       "locationId": "aquanite-cavern-sailing",
-      "label": "Aquanite cavern (Sailing) - Aquanite",
-      "arrival": "MONSTER",
+      "label": "Ynysdail Cavern entrance - continue to aquanites",
+      "arrival": "ENTRANCE",
       "points": [
         {
-          "x": 2248,
-          "y": 9862,
-          "plane": 0
-        },
-        {
-          "x": 2249,
-          "y": 9837,
-          "plane": 0
-        },
-        {
-          "x": 2251,
-          "y": 9852,
-          "plane": 0
-        },
-        {
-          "x": 2251,
-          "y": 9859,
-          "plane": 0
-        },
-        {
-          "x": 2253,
-          "y": 9835,
-          "plane": 0
-        },
-        {
-          "x": 2253,
-          "y": 9841,
-          "plane": 0
-        },
-        {
-          "x": 2253,
-          "y": 9863,
-          "plane": 0
-        },
-        {
-          "x": 2255,
-          "y": 9846,
-          "plane": 0
-        },
-        {
-          "x": 2261,
-          "y": 9845,
-          "plane": 0
-        },
-        {
-          "x": 2262,
-          "y": 9852,
-          "plane": 0
-        },
-        {
-          "x": 2266,
-          "y": 9842,
-          "plane": 0
-        },
-        {
-          "x": 2268,
-          "y": 9848,
-          "plane": 0
-        },
-        {
-          "x": 2279,
-          "y": 9872,
-          "plane": 0
-        },
-        {
-          "x": 2281,
-          "y": 9867,
-          "plane": 0
-        },
-        {
-          "x": 2283,
-          "y": 9861,
-          "plane": 0
-        },
-        {
-          "x": 2285,
-          "y": 9865,
+          "x": 2218,
+          "y": 3477,
           "plane": 0
         }
       ],
       "evidence": [
         {
-          "url": "https://oldschool.runescape.wiki/w/Aquanite",
-          "title": "Aquanite",
-          "timestamp": "2026-08-08T01:27:25Z",
-          "pageId": 97955,
-          "revisionId": 15290196,
+          "url": "https://oldschool.runescape.wiki/w/Ynysdail_Cavern",
+          "title": "Ynysdail Cavern",
+          "timestamp": "2026-05-17T04:35:19Z",
+          "pageId": 612717,
+          "revisionId": 15212230,
           "missing": false
         },
         {
-          "url": "https://oldschool.runescape.wiki/w/Module%3AMap",
-          "title": "Module:Map",
-          "timestamp": "2026-08-24T05:10:10Z",
-          "pageId": 219625,
-          "revisionId": 15317770,
+          "url": "https://github.com/Skretzo/shortest-path/blob/6ca996a41a6a4b85d0fdb38dc6d56c66b747e29a/src/main/resources/transports/boats.tsv#L184",
+          "title": "src/main/resources/transports/boats.tsv:184",
+          "timestamp": "2026-09-03T01:19:09Z",
+          "pageId": 0,
+          "revisionId": 0,
           "missing": false
         }
       ],
-      "note": "Spawn locations for the selected monster in this area."
+      "note": "Route ends at the cavern entrance on Ynysdail. Shortest Path uses the Gwenith rowboat only once it is built; otherwise sail to Ynysdail (73 Sailing, adamant keel). Continue inside to the aquanites manually."
     },
     "araxxor-at-araxxor-lair": {
       "id": "araxxor-at-araxxor-lair",

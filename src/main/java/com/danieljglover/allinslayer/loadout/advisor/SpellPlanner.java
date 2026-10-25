@@ -396,7 +396,8 @@ public final class SpellPlanner
     private static boolean optional(String text)
     {
         return text.contains("optional") || text.contains("consider ") || text.contains("may ")
-            || text.contains("can ") || text.contains("alternatively") || text.contains("for example");
+            || text.contains("can ") || text.contains("alternatively") || text.contains("for example")
+            || text.contains("if desired") || text.contains("where available");
     }
 
     private static boolean explicitCastingRequirement(String text, Spell spell)
